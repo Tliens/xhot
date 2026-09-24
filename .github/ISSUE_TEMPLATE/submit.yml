@@ -37,6 +37,10 @@ body:
       options:
         - label: 福利姬 / 18+ creator
         - label: 私密摄影 / Boudoir
+        - label: COS / 二次元 / Cosplay
+        - label: 独立开发 / Indie dev
+        - label: 出海 / Going global
+        - label: AI / AI creator
     validations:
       required: true
   - type: textarea

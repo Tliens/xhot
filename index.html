@@ -166,7 +166,7 @@ footer a{color:var(--chiptx)}
   <section class="hero">
     <div class="weekpill" id="weekPill">🏆 2026 年第 39 周榜 · 09.21 – 09.27</div>
     <h1><span data-i18n="h1a">X/Twitter 博主</span><em data-i18n="h1b">人气排行榜</em></h1>
-    <p class="tagline" data-i18n="tagline">按粉丝数排名 · 福利姬 / 私密摄影 / 独立开发精选 · 一键直达主页</p>
+    <p class="tagline" data-i18n="tagline">每周更新 · 福利姬 / 私密摄影 / COS / 独立开发 / AI · 一键直达主页</p>
     <div class="metabar" id="metabar"></div>
   </section>
 
@@ -177,6 +177,8 @@ footer a{color:var(--chiptx)}
     <button data-tab="flj"><span data-i18n="tabFlj">🔞 福利姬</span><span class="ad">18+</span></button>
     <button data-tab="photo"><span data-i18n="tabPhoto">📷 私密摄影</span><span class="ad">18+</span></button>
     <button data-tab="indie"><span data-i18n="tabIndie">💻 独立开发</span></button>
+    <button data-tab="cos"><span data-i18n="tabCos">💎 COS·二次元</span></button>
+    <button data-tab="ai"><span data-i18n="tabAi">🤖 AI</span></button>
   </nav>
 
   <div class="tools">
@@ -263,7 +265,7 @@ const BLOGGERS = [
   { h:'dljingxiang',    n:'静香',                    f:1020000, c:['flj'],         d:{zh:'中文区人气创作者，专注私密视觉内容',en:'Popular Chinese creator focused on intimate visuals'}, av:'', add:'2026-09' },
   { h:'watever177',     n:'17°',                    f:920000,  c:['flj'],         d:{zh:'原创 NSFW 创作者，多渠道订阅内容',en:'Original NSFW creator with multi-channel subscriptions'}, av:'', add:'2026-09' },
   { h:'azhua1997',      n:'阿朱啊',                  f:890000,  c:['flj'],         d:{zh:'老牌人气创作者，日常写真与身材分享',en:'Veteran popular creator sharing daily photo sets'}, av:'https://pbs.twimg.com/profile_images/1073187548812345345/8o7zXjNE.jpg', add:'2026-09' },
-  { h:'TiTi40511552',   n:'🍑♡TiTi鈦合金♡ 🍑',      f:950000,  c:['flj','photo'], d:{zh:'COS 与二次元艺术写真结合的 NSFW 模特',en:'NSFW model combining cosplay and anime-style art photography'}, av:'https://pbs.twimg.com/profile_images/1628362420451430407/p3j5Con-.jpg', add:'2026-09' },
+  { h:'TiTi40511552',   n:'🍑♡TiTi鈦合金♡ 🍑',      f:950000,  c:['cos','flj','photo'], d:{zh:'COS 与二次元艺术写真结合的 NSFW 模特',en:'NSFW model combining cosplay and anime-style art photography'}, av:'https://pbs.twimg.com/profile_images/1628362420451430407/p3j5Con-.jpg', add:'2026-09' },
   { h:'oshiximiya',     n:'国服第一瑶',              f:870000,  c:['flj'],         d:{zh:'露脸向内容与吃播系列创作者',en:'Face-revealing content and mukbang series creator'}, av:'', add:'2026-09' },
   { h:'nana_taipei',    n:'Nana',                   f:870000,  c:['flj','photo'], d:{zh:'台湾模特风写真与视频创作者',en:'Taiwanese model-style photo and video creator'}, av:'', add:'2026-09' },
   { h:'12baegirl',      n:'♡† 𝐍𝐨. 𝟏𝟐 † 🕸️',       f:870000,  c:['flj'],         d:{zh:'主题化运营的福利内容博主',en:'Themed adult content creator'}, av:'', add:'2026-09' },
@@ -322,6 +324,31 @@ const BLOGGERS = [
   { h:'guishou_56',     n:'Niko',                   f:10000,   c:['indie','sea'], d:{zh:'中文独立开发者名单与 AI SaaS',en:'Chinese indie lists and AI SaaS'}, av:'', add:'2026-09' },
   { h:'realcoreychiu',  n:'Corey Chiu',             f:5000,    c:['indie','sea'], d:{zh:'独立开发 + 环游世界写代码',en:'Indie developer coding while traveling'}, av:'', add:'2026-09' },
   { h:'becool_me',      n:'BECOOL',                 f:5000,    c:['indie','sea'], d:{zh:'多款工具站独立开发',en:'Multiple tool sites indie dev'}, av:'', add:'2026-09' },
+  { h:'enako_cos',      n:'えなこ',                  f:2500000, c:['cos','acg'],   d:{zh:'日本顶级 Coser，高还原角色与商业活动',en:'Top Japanese cosplayer, high-fidelity roles and brand work'}, av:'https://pbs.twimg.com/profile_images/1566064687976189953/AHpvbx_v.jpg', add:'2026-09' },
+  { h:'haneame_cos',    n:'Hane Ame ハネアメ雨波',   f:1430000, c:['cos','acg'],   d:{zh:'台湾知名 Coser 与视觉艺术家，高人气角色还原',en:'Renowned Taiwanese cosplayer and visual artist'}, av:'https://pbs.twimg.com/profile_images/2096827082286456832/mt3I3AfN.jpg', add:'2026-09' },
+  { h:'iorimoe_five',   n:'伊織萌',                  f:1600000, c:['cos'],         d:{zh:'日本超人气 Coser，多角色高还原',en:'Very popular Japanese cosplayer across many roles'}, av:'', add:'2026-09' },
+  { h:'sinonome_umi',   n:'東雲海',                  f:1200000, c:['cos'],         d:{zh:'日本高人气二次元 Coser',en:'Popular Japanese anime-style cosplayer'}, av:'', add:'2026-09' },
+  { h:'shimotsukiTW',   n:'霜月',                    f:760000,  c:['cos'],         d:{zh:'台湾知名 Coser',en:'Well-known Taiwanese cosplayer'}, av:'', add:'2026-09' },
+  { h:'Ely_eee',        n:'Ely',                    f:700000,  c:['cos'],         d:{zh:'台湾高人气 Coser',en:'Popular Taiwanese cosplayer'}, av:'', add:'2026-09' },
+  { h:'monpink_mon',    n:'Mon夢',                   f:690000,  c:['cos'],         d:{zh:'台湾二次元 Coser',en:'Taiwanese anime-style cosplayer'}, av:'', add:'2026-09' },
+  { h:'yukiAstra',      n:'雪晴Astra',              f:600000,  c:['cos'],         d:{zh:'台湾 Coser，多角色写真',en:'Taiwanese cosplayer with many character sets'}, av:'', add:'2026-09' },
+  { h:'abanban0609',    n:'斑斑',                    f:160000,  c:['cos'],         d:{zh:'台湾 Coser',en:'Taiwanese cosplayer'}, av:'', add:'2026-09' },
+  { h:'xiangjicosplay', n:'漫展香姬',                f:119000,  c:['cos'],         d:{zh:'漫展与公共场合 COS 内容',en:'Convention and public cosplay content'}, av:'', add:'2026-09' },
+  { h:'sama',           n:'Sam Altman',             f:6280000, c:['ai'],          d:{zh:'OpenAI CEO，AGI 相关动态',en:'OpenAI CEO, AGI updates'}, av:'https://pbs.twimg.com/profile_images/2046764873200394240/r7BxVezs.jpg', add:'2026-09' },
+  { h:'karpathy',       n:'Andrej Karpathy',        f:4210000, c:['ai'],          d:{zh:'深度学习教育者，前 Tesla AI 总监',en:'Deep learning educator, former Tesla AI director'}, av:'https://pbs.twimg.com/profile_images/1296667294148382721/9Pr6XrPB.jpg', add:'2026-09' },
+  { h:'demishassabis',  n:'Demis Hassabis',         f:1890000, c:['ai'],          d:{zh:'Google DeepMind 联合创始人兼 CEO，诺贝尔奖得主',en:'Google DeepMind co-founder & CEO, Nobel laureate'}, av:'https://pbs.twimg.com/profile_images/1990472620614053888/xrAu0wQL.jpg', add:'2026-09' },
+  { h:'ylecun',         n:'Yann LeCun',             f:1000000, c:['ai'],          d:{zh:'Meta AI 首席科学家，深度学习先驱',en:'Meta AI chief scientist, deep learning pioneer'}, av:'', add:'2026-09' },
+  { h:'AndrewYNg',      n:'Andrew Ng',              f:1000000, c:['ai'],          d:{zh:'DeepLearning.AI 创始人，AI 教育与应用',en:'DeepLearning.AI founder, AI education & applications'}, av:'', add:'2026-09' },
+  { h:'OpenAI',         n:'OpenAI',                 f:3000000, c:['ai'],          d:{zh:'OpenAI 官方账号',en:'Official OpenAI account'}, av:'', add:'2026-09' },
+  { h:'simonw',         n:'Simon Willison',         f:300000,  c:['ai'],          d:{zh:'LLM 实践评测与工具建设者',en:'LLM testing and tools builder'}, av:'', add:'2026-09' },
+  { h:'emollick',       n:'Ethan Mollick',          f:300000,  c:['ai'],          d:{zh:'研究 AI 如何改变工作与学习',en:'Research on how AI changes work and learning'}, av:'', add:'2026-09' },
+  { h:'DarioAmodei',    n:'Dario Amodei',           f:300000,  c:['ai'],          d:{zh:'Anthropic CEO',en:'Anthropic CEO'}, av:'', add:'2026-09' },
+  { h:'ClementDelangue',n:'Clement Delangue',       f:300000,  c:['ai'],          d:{zh:'Hugging Face CEO',en:'Hugging Face CEO'}, av:'', add:'2026-09' },
+  { h:'AravSrinivas',   n:'Aravind Srinivas',       f:300000,  c:['ai'],          d:{zh:'Perplexity CEO',en:'Perplexity CEO'}, av:'', add:'2026-09' },
+  { h:'levie',          n:'Aaron Levie',            f:300000,  c:['ai'],          d:{zh:'Box CEO，观察 AI 重塑企业',en:'Box CEO on AI rewiring companies'}, av:'', add:'2026-09' },
+  { h:'jackclarkSF',    n:'Jack Clark',             f:300000,  c:['ai'],          d:{zh:'Anthropic 联合创始人，AI 政策',en:'Anthropic co-founder, AI policy'}, av:'', add:'2026-09' },
+  { h:'AnthropicAI',    n:'Anthropic',              f:300000,  c:['ai'],          d:{zh:'Anthropic 官方',en:'Official Anthropic account'}, av:'', add:'2026-09' },
+  { h:'GoogleDeepMind', n:'Google DeepMind',        f:300000,  c:['ai'],          d:{zh:'Google DeepMind 官方',en:'Official Google DeepMind account'}, av:'', add:'2026-09' },
 ];
 
 /* ===== i18n ===== */
@@ -331,13 +358,13 @@ zh:{
   desc:'X热榜是每周更新的 X（Twitter）博主粉丝数周榜：福利姬、私密摄影等 18+ 创作者与独立开发出海开发者按粉丝数排名，一键直达博主主页。免费提交收录，博主分享可带来真实流量。',
   brand:'X热榜',
   h1a:'X/Twitter 博主', h1b:'人气排行榜',
-  tagline:'每周更新 · 福利姬 / 私密摄影 / 独立开发精选 · 一键直达主页',
+  tagline:'每周更新 · 福利姬 / 私密摄影 / COS / 独立开发 / AI · 一键直达主页',
   metaCount:'共收录', metaCount2:'位博主', updated:'数据更新于', est:'粉丝数为约数', weekly:'每周更新',
   weekTpl:'🏆 {y} 年第 {w} 周榜 · {range}',
   demoNotice:'⚠️ 当前榜单为示例数据（账号均带 demo 前缀），正式数据待博主收录后更新。',
-  tabAll:'🏆 总榜', tabFlj:'🔞 福利姬', tabPhoto:'📷 私密摄影', tabIndie:'💻 独立开发',
+  tabAll:'🏆 总榜', tabFlj:'🔞 福利姬', tabPhoto:'📷 私密摄影', tabIndie:'💻 独立开发', tabCos:'💎 COS·二次元', tabAi:'🤖 AI',
   searchPh:'搜索名字或 @handle…', countTpl:'{n} 位博主', empty:'没有匹配的博主，换个关键词试试',
-  followers:'粉丝', catFlj:'福利姬', catPhoto:'私密摄影', catIndie:'独立开发', catSea:'出海', c18:'18+',
+  followers:'粉丝', catFlj:'福利姬', catPhoto:'私密摄影', catIndie:'独立开发', catSea:'出海', catCos:'COS', catAcg:'二次元', catAi:'AI', c18:'18+',
   btnHome:'主页 ↗', btnShare:'分享',
   ctaTitle:'你是 X 博主？免费上榜', ctaBody:'提交你的账号信息，审核通过即可进入榜单。榜单会为每位博主带来真实的主页访问流量，也欢迎把你的排名分享给粉丝。',
   ctaBtn:'＋ 提交收录', shareSite:'📢 分享 X热榜',
@@ -361,13 +388,13 @@ en:{
   desc:'X Hot List is a weekly-updated ranking of popular X (Twitter) creators: curated 18+ and boudoir picks plus indie hackers going global, ranked by followers. One tap to each profile. Free submission.',
   brand:'X Hot List',
   h1a:'X/Twitter Creator ', h1b:'Rankings',
-  tagline:'Updated weekly · 18+ / Boudoir / Indie picks · One tap to each profile',
+  tagline:'Updated weekly · 18+ / Boudoir / Cosplay / Indie / AI · One tap to each profile',
   metaCount:'', metaCount2:'creators listed', updated:'Updated', est:'follower counts are estimates', weekly:'updated weekly',
   weekTpl:'🏆 Week {w}, {y} Ranking · {range}',
   demoNotice:'⚠️ Demo data below (all handles prefixed with demo_). Real entries will be added after review.',
-  tabAll:'🏆 All', tabFlj:'🔞 18+ Picks', tabPhoto:'📷 Boudoir', tabIndie:'💻 Indie Dev',
+  tabAll:'🏆 All', tabFlj:'🔞 18+ Picks', tabPhoto:'📷 Boudoir', tabIndie:'💻 Indie Dev', tabCos:'💎 Cosplay', tabAi:'🤖 AI',
   searchPh:'Search name or @handle…', countTpl:'{n} creators', empty:'No creators match. Try another keyword.',
-  followers:'followers', catFlj:'18+ Creator', catPhoto:'Boudoir', catIndie:'Indie Dev', catSea:'Going Global', c18:'18+',
+  followers:'followers', catFlj:'18+ Creator', catPhoto:'Boudoir', catIndie:'Indie Dev', catSea:'Going Global', catCos:'Cosplay', catAcg:'Anime', catAi:'AI', c18:'18+',
   btnHome:'Profile ↗', btnShare:'Share',
   ctaTitle:'Are you a creator? Get listed free', ctaBody:'Submit your account and appear on the board after review. Your rank badge drives real profile visits — share it with your fans.',
   ctaBtn:'＋ Submit', shareSite:'📢 Share X Hot List',
@@ -461,6 +488,8 @@ function filtered(){
     if (tab === 'flj' && !b.c.includes('flj')) return false;
     if (tab === 'photo' && !b.c.includes('photo')) return false;
     if (tab === 'indie' && !(b.c.includes('indie') || b.c.includes('sea'))) return false;
+    if (tab === 'cos' && !(b.c.includes('cos') || b.c.includes('acg'))) return false;
+    if (tab === 'ai' && !b.c.includes('ai')) return false;
     if (q && !(b.n.toLowerCase().includes(q) || b.h.toLowerCase().includes(q))) return false;
     return true;
   });
@@ -480,7 +509,7 @@ function renderList(){
     const av = b.av
       ? '<span class="av"><img src="' + esc(b.av) + '" alt="" loading="lazy" onerror="this.parentNode.textContent=\'' + esc(initial) + '\'"></span>'
       : '<span class="av" style="--g1:' + g1 + ';--g2:' + g2 + '">' + esc(initial) + '</span>';
-    const CATKEY = { flj:'catFlj', photo:'catPhoto', indie:'catIndie', sea:'catSea' };
+    const CATKEY = { flj:'catFlj', photo:'catPhoto', indie:'catIndie', sea:'catSea', cos:'catCos', acg:'catAcg', ai:'catAi' };
     const chips = b.c.map(c => '<span class="chip">' + esc(t(CATKEY[c] || c)) + '</span>').join('')
       + (NSFW_TABS.some(x => b.c.includes(x)) ? ' <span class="chip">🔞 ' + t('c18') + '</span>' : '');
     return '<li class="card r' + (r <= 3 ? r : '') + '">' + bg
@@ -577,7 +606,7 @@ renderWeek();
 if (META.demo) $('demoNotice').style.display = '';
 else $('demoNotice').style.display = 'none';
 const h0 = location.hash.replace('#','');
-goTab(['all','flj','photo','indie'].includes(h0) ? h0 : 'all', false);
+goTab(['all','flj','photo','indie','cos','ai'].includes(h0) ? h0 : 'all', false);
 </script>
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6a164def7d63477cba60148b8417ca95"}'></script>
 </body>
