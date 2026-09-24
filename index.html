@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X热榜 — X/Twitter 博主人气排行 · 福利姬 & 私密摄影推荐 | X Hot List</title>
+<meta name="description" content="X热榜收录热门 X（Twitter）中文博主，按粉丝数排名，福利姬与私密摄影博主精选推荐，一键直达博主主页。免费提交收录，博主分享可带来真实流量。">
+<link rel="canonical" href="https://tliens.github.io/xhot/">
+<link rel="alternate" hreflang="zh" href="https://tliens.github.io/xhot/?lang=zh">
+<link rel="alternate" hreflang="en" href="https://tliens.github.io/xhot/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://tliens.github.io/xhot/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="X热榜 · X Hot List">
+<meta property="og:title" content="X热榜 — X/Twitter 博主人气排行">
+<meta property="og:description" content="按粉丝数排名的 X 中文博主榜单，福利姬 & 私密摄影精选推荐，一键直达主页。">
+<meta property="og:url" content="https://tliens.github.io/xhot/">
+<meta property="og:image" content="https://tliens.github.io/xhot/og-image.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="X热榜 — X/Twitter Creator Rankings">
+<meta name="twitter:description" content="Ranked directory of Chinese X/Twitter creators. Boudoir & 18+ picks, one tap to each profile.">
+<meta name="twitter:image" content="https://tliens.github.io/xhot/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebApplication","name":"X热榜 X Hot List","url":"https://tliens.github.io/xhot/",
+  "applicationCategory":"EntertainmentApplication","operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "inLanguage":["zh-CN","en"],
+  "description":"X（Twitter）中文博主人气排行榜，按粉丝数排名，含福利姬与私密摄影博主推荐分区，可一键跳转博主主页。"},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"榜单数据从哪里来？",
+   "acceptedAnswer":{"@type":"Answer","text":"粉丝数为人工核对的约数（精确到万位），定期更新。本站为独立目录，与 X 官方无关。"}},
+  {"@type":"Question","name":"怎么上榜 / 提交收录？",
+   "acceptedAnswer":{"@type":"Answer","text":"点击页面的「提交收录」按钮，在 GitHub Issue 表单里填写博主信息，审核通过后即可免费上榜。"}},
+  {"@type":"Question","name":"排名规则是什么？",
+   "acceptedAnswer":{"@type":"Answer","text":"总榜按粉丝数从高到低排列；福利姬与私密摄影分区保留总榜名次，方便筛选浏览。"}},
+  {"@type":"Question","name":"福利姬 / 私密摄影分区有什么限制？",
+   "acceptedAnswer":{"@type":"Answer","text":"这两个分区包含成人向内容链接，进入前需确认年满 18 岁，确认结果只保存在你自己的浏览器里。"}},
+  {"@type":"Question","name":"博主想修改或删除自己的信息怎么办？",
+   "acceptedAnswer":{"@type":"Answer","text":"在 GitHub 仓库提 Issue 说明情况，或让朋友代为提交，通常 48 小时内处理下架或更正。"}}
+ ]}
+]}
+</script>
+<style>
+:root{
+  --bg:#0b0d12; --bg2:#0f1219; --card:#141826; --card-h:#1a2032; --tx:#e9edf5; --tx2:#98a2b8;
+  --line:#232b3f; --acc:#ff4d7d; --acc2:#ff8a4d; --gold:#f5c542; --silver:#c3ccdd; --bronze:#d2955c;
+  --chipbg:rgba(255,77,125,.14); --chiptx:#ff8aa8; --shadow:0 8px 28px rgba(0,0,0,.45);
+}
+[data-theme="light"]{
+  --bg:#f6f7fa; --bg2:#eef0f6; --card:#ffffff; --card-h:#ffffff; --tx:#171c26; --tx2:#5b6472;
+  --line:#e2e6ef; --chipbg:rgba(255,77,125,.10); --chiptx:#d63d6d; --shadow:0 8px 24px rgba(20,30,60,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Segoe UI","Microsoft YaHei",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;letter-spacing:.3px}
+.brand .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+.brand .sub{font-size:11px;font-weight:600;color:var(--tx2);letter-spacing:1px;margin-top:5px}
+.ctrl{display:flex;gap:8px}
+.ctrl button{background:var(--card);border:1px solid var(--line);color:var(--tx);border-radius:9px;min-width:38px;height:34px;padding:0 10px;font-size:13px;font-weight:700;transition:border-color .15s}
+.ctrl button:hover{border-color:var(--acc)}
+.hero{text-align:center;padding:38px 0 8px}
+.hero h1{font-size:clamp(24px,5vw,34px);font-weight:800;line-height:1.25}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tagline{color:var(--tx2);margin-top:10px;font-size:15px}
+.metabar{margin-top:14px;font-size:12.5px;color:var(--tx2)}
+.metabar b{color:var(--tx)}
+.notice{margin:18px 0 0;padding:10px 14px;border:1px dashed var(--acc);border-radius:10px;font-size:13px;color:var(--chiptx);background:var(--chipbg)}
+.tabs{display:flex;gap:6px;margin:22px 0 4px;border-bottom:1px solid var(--line);overflow-x:auto}
+.tabs button{background:none;border:none;color:var(--tx2);font-size:14.5px;font-weight:700;padding:11px 14px;border-bottom:2px solid transparent;white-space:nowrap;transition:color .15s}
+.tabs button:hover{color:var(--tx)}
+.tabs button.on{color:var(--acc);border-bottom-color:var(--acc)}
+.tabs .ad{font-size:10px;vertical-align:top;margin-left:2px}
+.tools{display:flex;gap:10px;margin:16px 0 14px}
+.tools input{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--tx);padding:10px 14px;font-size:14px;outline:none}
+.tools input:focus{border-color:var(--acc)}
+.count{align-self:center;font-size:12.5px;color:var(--tx2);white-space:nowrap}
+.cards{list-style:none;display:flex;flex-direction:column;gap:10px}
+.card{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;transition:transform .12s,border-color .12s,box-shadow .12s}
+.card:hover{border-color:var(--acc);transform:translateY(-1px);box-shadow:var(--shadow)}
+.rk{flex:0 0 46px;text-align:center;font-weight:800;font-size:17px;color:var(--tx2)}
+.card.r1 .rk{color:var(--gold);font-size:21px}
+.card.r2 .rk{color:var(--silver);font-size:20px}
+.card.r3 .rk{color:var(--bronze);font-size:20px}
+.card.r1{background:linear-gradient(135deg,var(--card),color-mix(in srgb,var(--acc) 7%,var(--card)))}
+.av{flex:0 0 52px;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#fff;background:linear-gradient(135deg,var(--g1,#ff4d7d),var(--g2,#ff8a4d));background-size:cover}
+.av img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.info{flex:1;min-width:0}
+.nm{font-weight:700;font-size:15.5px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.hd{font-size:12.5px;color:var(--tx2)}
+.ds{font-size:12.5px;color:var(--tx2);margin-top:3px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.chip{font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:20px;background:var(--chipbg);color:var(--chiptx);white-space:nowrap}
+.chip.g{background:rgba(90,160,255,.14);color:#7ab3ff}
+.right{flex:0 0 auto;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.fc{font-weight:800;font-size:16px}
+.fl{font-size:10.5px;color:var(--tx2);margin-top:-5px}
+.acts{display:flex;gap:6px}
+.acts a,.acts button{font-size:12px;font-weight:700;border-radius:8px;padding:5px 10px;border:1px solid var(--line);background:var(--bg2);color:var(--tx);transition:all .12s;display:inline-flex;align-items:center;gap:4px}
+.acts a:hover,.acts button:hover{border-color:var(--acc);color:var(--acc)}
+.acts .pri{background:linear-gradient(135deg,var(--acc),var(--acc2));border:none;color:#fff}
+.acts .pri:hover{color:#fff;filter:brightness(1.08)}
+.empty{text-align:center;color:var(--tx2);padding:36px 0;font-size:14px}
+.cta{margin:30px 0 6px;text-align:center;padding:22px 16px;border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
+.cta h2{font-size:17px;margin-bottom:6px}
+.cta p{font-size:13px;color:var(--tx2);margin-bottom:14px}
+.bigbtn{display:inline-block;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;font-weight:800;font-size:14.5px;border-radius:11px;padding:10px 26px;border:none;transition:filter .12s}
+.bigbtn:hover{filter:brightness(1.08)}
+.share-site{margin-top:12px}
+.share-site button{background:none;border:1px solid var(--line);color:var(--tx2);font-size:12.5px;border-radius:9px;padding:7px 16px;font-weight:600}
+.share-site button:hover{border-color:var(--acc);color:var(--acc)}
+.faq{margin:36px 0 10px}
+.faq h2{font-size:18px;margin-bottom:12px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:12px 16px;margin-bottom:8px}
+.faq summary{font-weight:700;font-size:14px;cursor:pointer}
+.faq p{font-size:13.5px;color:var(--tx2);margin-top:8px}
+footer{border-top:1px solid var(--line);margin-top:34px;padding:22px 0 40px;font-size:12px;color:var(--tx2)}
+footer p{margin-bottom:6px}
+footer a{color:var(--chiptx)}
+.flinks{margin-top:10px;display:flex;gap:14px;flex-wrap:wrap}
+.gate{position:fixed;inset:0;z-index:100;background:rgba(5,7,12,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px}
+.gate[hidden]{display:none}
+.gate .box{max-width:380px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 24px;text-align:center;box-shadow:var(--shadow)}
+.gate .ico{font-size:38px}
+.gate h3{font-size:18px;margin:10px 0 8px}
+.gate p{font-size:13.5px;color:var(--tx2);margin-bottom:18px}
+.gate .row{display:flex;gap:10px}
+.gate .row button{flex:1;border-radius:10px;padding:10px 0;font-size:14px;font-weight:700;border:1px solid var(--line);background:var(--bg2);color:var(--tx)}
+.gate .row .yes{background:linear-gradient(135deg,var(--acc),var(--acc2));border:none;color:#fff}
+@media (max-width:560px){
+  .card{flex-wrap:wrap}
+  .rk{flex:0 0 34px}
+  .fl{display:none}
+  .right{flex:1 1 100%;flex-direction:row;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:10px}
+  .fc{font-size:15px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="logo">🔥</span><span data-i18n="brand">X热榜</span><span class="sub">X HOT LIST</span></div>
+    <div class="ctrl">
+      <button id="btnLang" title="Language">EN</button>
+      <button id="btnTheme" title="Theme">☀️</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1><span data-i18n="h1a">X/Twitter 博主</span><em data-i18n="h1b">人气排行榜</em></h1>
+    <p class="tagline" data-i18n="tagline">按粉丝数排名 · 福利姬 / 私密摄影精选 · 一键直达博主主页</p>
+    <div class="metabar" id="metabar"></div>
+  </section>
+
+  <div class="notice" id="demoNotice" data-i18n="demoNotice">⚠️ 当前榜单为示例数据（账号均带 demo 前缀），正式数据待博主收录后更新。</div>
+
+  <nav class="tabs" id="tabs">
+    <button data-tab="all" class="on" data-i18n="tabAll">🏆 总榜</button>
+    <button data-tab="flj"><span data-i18n="tabFlj">🔞 福利姬</span><span class="ad">18+</span></button>
+    <button data-tab="photo"><span data-i18n="tabPhoto">📷 私密摄影</span><span class="ad">18+</span></button>
+  </nav>
+
+  <div class="tools">
+    <input id="q" type="search" data-i18n-ph="searchPh" placeholder="搜索名字或 @handle…">
+    <span class="count" id="count"></span>
+  </div>
+
+  <ol class="cards" id="list"></ol>
+  <div class="empty" id="empty" hidden data-i18n="empty">没有匹配的博主，换个关键词试试</div>
+
+  <section class="cta">
+    <h2 data-i18n="ctaTitle">你是 X 博主？免费上榜</h2>
+    <p data-i18n="ctaBody">提交你的账号信息，审核通过即可进入榜单。榜单会为每位博主带来真实的主页访问流量，也欢迎把你的排名分享给粉丝。</p>
+    <a class="bigbtn" id="btnSubmit" href="https://github.com/Tliens/xhot/issues/new?template=submit.yml" target="_blank" rel="noopener" data-i18n="ctaBtn">＋ 提交收录</a>
+    <div class="share-site"><button id="btnShareSite" data-i18n="shareSite">📢 分享 X热榜</button></div>
+  </section>
+
+  <section class="faq">
+    <h2 data-i18n="faqTitle">常见问题</h2>
+    <details open>
+      <summary data-i18n="fq1">榜单数据从哪里来？</summary>
+      <p data-i18n="fa1">粉丝数为人工核对的约数（精确到万位级别），定期更新。本站为独立目录站，与 X 官方无关联。</p>
+    </details>
+    <details>
+      <summary data-i18n="fq2">怎么上榜 / 提交收录？</summary>
+      <p data-i18n="fa2">点击「提交收录」按钮，在表单里填写博主用户名、分类和简介，审核通过后即可免费上榜。</p>
+    </details>
+    <details>
+      <summary data-i18n="fq3">排名规则是什么？</summary>
+      <p data-i18n="fa3">总榜按粉丝数从高到低排列；福利姬与私密摄影分区沿用总榜名次，方便筛选浏览。</p>
+    </details>
+    <details>
+      <summary data-i18n="fq4">福利姬 / 私密摄影分区有什么限制？</summary>
+      <p data-i18n="fa4">这两个分区包含成人向内容链接，进入前需确认年满 18 岁。确认结果只保存在你自己的浏览器里，不会上传。</p>
+    </details>
+    <details>
+      <summary data-i18n="fq5">博主想修改或删除自己的信息怎么办？</summary>
+      <p data-i18n="fa5">在 GitHub 仓库提 Issue 说明情况即可，通常 48 小时内处理更正或下架。</p>
+    </details>
+  </section>
+
+  <footer>
+    <p data-i18n="fDisc">本站为独立的第三方目录，与 X Corp. / Twitter 无任何关联；博主信息整理自公开资料，排名为约数仅供参考。</p>
+    <p data-i18n="fNsfw">🔞 站内部分链接指向含成人内容的账号，仅限年满 18 岁用户浏览，请遵守所在地区法律法规。</p>
+    <p data-i18n="fPrivacy">本站无账号系统、无跟踪 Cookie；年龄确认与主题偏好仅存储在你本地浏览器。</p>
+    <div class="flinks">
+      <a href="https://github.com/Tliens/xhot" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/Tliens/xhot/issues/new?template=submit.yml" target="_blank" rel="noopener" data-i18n="fSubmit">提交收录</a>
+      <a href="https://github.com/Tliens/xhot/issues" target="_blank" rel="noopener" data-i18n="fContact">联系 / 下架申请</a>
+    </div>
+  </footer>
+</main>
+
+<div class="gate" id="gate" hidden>
+  <div class="box" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+    <div class="ico">🔞</div>
+    <h3 id="gateTitle" data-i18n="gateTitle">成人向内容确认</h3>
+    <p data-i18n="gateBody">此分区收录的博主可能发布成人向内容。确认你已年满 18 岁，并愿意浏览此类链接吗？</p>
+    <div class="row">
+      <button id="gateNo" data-i18n="gateNo">返回</button>
+      <button id="gateYes" class="yes" data-i18n="gateYes">我已满 18 岁，继续</button>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+/* ===== 数据：手动维护。改这里即可，push 后约 1 分钟自动重新部署 =====
+ * h: X 用户名（不带 @）；n: 显示名；f: 粉丝数（约数）；c: 分类 ['flj','photo']
+ * d: 双语简介；av: 头像 URL（可留空，留空用首字母渐变头像）；add: 收录月份
+ */
+const SITE = 'https://tliens.github.io/xhot/';
+const META = { updated: '2026-09-24', demo: true };
+const BLOGGERS = [
+  { h:'demo_yuki',  n:'雪兔 Yuki',  f:1823000, c:['flj','photo'], d:{zh:'示例数据：每周更新 COS 与写真，互动活跃',en:'Demo entry: weekly cosplay & photo sets'}, av:'', add:'2026-08' },
+  { h:'demo_momo',  n:'桃桃 MoMo',  f:1568000, c:['flj'],         d:{zh:'示例数据：日系写真博主，粉丝增长快',en:'Demo entry: JP-style photo creator'}, av:'', add:'2026-08' },
+  { h:'demo_ling',  n:'灵酱',       f:1342000, c:['photo'],       d:{zh:'示例数据：私密摄影工作室主理人',en:'Demo entry: boudoir studio photographer'}, av:'', add:'2026-08' },
+  { h:'demo_karin', n:'Karin',      f:1215000, c:['flj'],         d:{zh:'示例数据：定期直播 + 会员专属内容',en:'Demo entry: streams + members-only sets'}, av:'', add:'2026-08' },
+  { h:'demo_sea',   n:'小海',       f:986000,  c:['photo'],       d:{zh:'示例数据：胶片质感人像摄影',en:'Demo entry: film-look portrait photography'}, av:'', add:'2026-08' },
+  { h:'demo_ritsu', n:'莉茨',       f:871000,  c:['flj'],         d:{zh:'示例数据：COS 妹子，漫展常客',en:'Demo entry: cosplayer, con regular'}, av:'', add:'2026-08' },
+  { h:'demo_nana',  n:'Nana',       f:764000,  c:['photo','flj'], d:{zh:'示例数据：私房 + 旅行写真',en:'Demo entry: boudoir + travel sets'}, av:'', add:'2026-08' },
+  { h:'demo_mei',   n:'小梅',       f:650000,  c:['photo'],       d:{zh:'示例数据：光影人像，风格干净',en:'Demo entry: clean light-portrait style'}, av:'', add:'2026-08' },
+  { h:'demo_aya',   n:'绫',         f:543000,  c:['flj'],         d:{zh:'示例数据：JK / 女仆系内容为主',en:'Demo entry: JK & maid outfits'}, av:'', add:'2026-08' },
+  { h:'demo_kuku',  n:'酷酷',       f:439000,  c:['photo'],       d:{zh:'示例数据：城市夜景人像',en:'Demo entry: urban night portraits'}, av:'', add:'2026-08' },
+  { h:'demo_miu',   n:'咪呜',       f:326000,  c:['flj'],         d:{zh:'示例数据：元气系短视频 + 图文',en:'Demo entry: energetic clips + photos'}, av:'', add:'2026-08' },
+  { h:'demo_sasa',  n:'纱纱',       f:251000,  c:['photo'],       d:{zh:'示例数据：室内自然光私房',en:'Demo entry: natural-light indoor sets'}, av:'', add:'2026-08' },
+  { h:'demo_ruri',  n:'琉璃',       f:187000,  c:['flj'],         d:{zh:'示例数据：二次元 COS 新人',en:'Demo entry: anime cosplay, rising'}, av:'', add:'2026-08' },
+  { h:'demo_pomu',  n:'小蓬',       f:98000,   c:['photo'],       d:{zh:'示例数据：小众胶片私房',en:'Demo entry: niche film boudoir'}, av:'', add:'2026-08' },
+];
+
+/* ===== i18n ===== */
+const I18N = {
+zh:{
+  title:'X热榜 — X/Twitter 博主人气排行 · 福利姬 & 私密摄影推荐 | X Hot List',
+  desc:'X热榜收录热门 X（Twitter）中文博主，按粉丝数排名，福利姬与私密摄影博主精选推荐，一键直达博主主页。免费提交收录，博主分享可带来真实流量。',
+  brand:'X热榜',
+  h1a:'X/Twitter 博主', h1b:'人气排行榜',
+  tagline:'按粉丝数排名 · 福利姬 / 私密摄影精选 · 一键直达博主主页',
+  metaCount:'共收录', metaCount2:'位博主', updated:'数据更新于', est:'粉丝数为约数',
+  demoNotice:'⚠️ 当前榜单为示例数据（账号均带 demo 前缀），正式数据待博主收录后更新。',
+  tabAll:'🏆 总榜', tabFlj:'🔞 福利姬', tabPhoto:'📷 私密摄影',
+  searchPh:'搜索名字或 @handle…', countTpl:'{n} 位博主', empty:'没有匹配的博主，换个关键词试试',
+  followers:'粉丝', catFlj:'福利姬', catPhoto:'私密摄影', c18:'18+',
+  btnHome:'主页 ↗', btnShare:'分享',
+  ctaTitle:'你是 X 博主？免费上榜', ctaBody:'提交你的账号信息，审核通过即可进入榜单。榜单会为每位博主带来真实的主页访问流量，也欢迎把你的排名分享给粉丝。',
+  ctaBtn:'＋ 提交收录', shareSite:'📢 分享 X热榜',
+  shareText:'「{name}」在 X热榜 排名 #{rank} 🔥', shareSiteText:'X热榜：X/Twitter 博主人气排行，看看你关注的博主排第几 🔥',
+  faqTitle:'常见问题',
+  fq1:'榜单数据从哪里来？', fa1:'粉丝数为人工核对的约数（精确到万位级别），定期更新。本站为独立目录站，与 X 官方无关联。',
+  fq2:'怎么上榜 / 提交收录？', fa2:'点击「提交收录」按钮，在表单里填写博主用户名、分类和简介，审核通过后即可免费上榜。',
+  fq3:'排名规则是什么？', fa3:'总榜按粉丝数从高到低排列；福利姬与私密摄影分区沿用总榜名次，方便筛选浏览。',
+  fq4:'福利姬 / 私密摄影分区有什么限制？', fa4:'这两个分区包含成人向内容链接，进入前需确认年满 18 岁。确认结果只保存在你自己的浏览器里，不会上传。',
+  fq5:'博主想修改或删除自己的信息怎么办？', fa5:'在 GitHub 仓库提 Issue 说明情况即可，通常 48 小时内处理更正或下架。',
+  fDisc:'本站为独立的第三方目录，与 X Corp. / Twitter 无任何关联；博主信息整理自公开资料，排名为约数仅供参考。',
+  fNsfw:'🔞 站内部分链接指向含成人内容的账号，仅限年满 18 岁用户浏览，请遵守所在地区法律法规。',
+  fPrivacy:'本站无账号系统、无跟踪 Cookie；年龄确认与主题偏好仅存储在你本地浏览器。',
+  fSubmit:'提交收录', fContact:'联系 / 下架申请',
+  gateTitle:'成人向内容确认', gateBody:'此分区收录的博主可能发布成人向内容。确认你已年满 18 岁，并愿意浏览此类链接吗？',
+  gateYes:'我已满 18 岁，继续', gateNo:'返回',
+  copied:'已复制 ✓'
+},
+en:{
+  title:'X Hot List — X/Twitter Creator Rankings, Boudoir & 18+ Picks',
+  desc:'X Hot List ranks popular Chinese X (Twitter) creators by followers, with curated boudoir & 18+ picks. One tap to each profile. Free submission — get real traffic from your rank badge.',
+  brand:'X Hot List',
+  h1a:'X/Twitter Creator ', h1b:'Rankings',
+  tagline:'Ranked by followers · Boudoir / 18+ picks · One tap to each profile',
+  metaCount:'', metaCount2:'creators listed', updated:'Updated', est:'follower counts are estimates',
+  demoNotice:'⚠️ Demo data below (all handles prefixed with demo_). Real entries will be added after review.',
+  tabAll:'🏆 All', tabFlj:'🔞 18+ Picks', tabPhoto:'📷 Boudoir',
+  searchPh:'Search name or @handle…', countTpl:'{n} creators', empty:'No creators match. Try another keyword.',
+  followers:'followers', catFlj:'18+ Creator', catPhoto:'Boudoir', c18:'18+',
+  btnHome:'Profile ↗', btnShare:'Share',
+  ctaTitle:'Are you a creator? Get listed free', ctaBody:'Submit your account and appear on the board after review. Your rank badge drives real profile visits — share it with your fans.',
+  ctaBtn:'＋ Submit', shareSite:'📢 Share X Hot List',
+  shareText:'{name} is ranked #{rank} on X Hot List 🔥', shareSiteText:'X Hot List — rankings for X/Twitter creators. Where does your fave rank? 🔥',
+  faqTitle:'FAQ',
+  fq1:'Where does the data come from?', fa1:'Follower counts are manually verified estimates, refreshed regularly. This is an independent directory, not affiliated with X.',
+  fq2:'How do I get listed?', fa2:'Click Submit, fill in the handle, category and bio in the form. Listing is free once approved.',
+  fq3:'How does ranking work?', fa3:'The main board sorts by follower count. The 18+ / Boudoir tabs keep main-board ranks for easy browsing.',
+  fq4:'Any restriction on 18+ tabs?', fa4:'Those tabs link to adult-oriented accounts. You must confirm you are 18+ first; the confirmation is stored only in your browser.',
+  fq5:'How to fix or remove my info?', fa5:'Open an Issue on the GitHub repo describing the request. Corrections and takedowns are usually handled within 48 hours.',
+  fDisc:'Independent third-party directory, not affiliated with X Corp. / Twitter. Info compiled from public sources; ranks are estimates.',
+  fNsfw:'🔞 Some links point to adult-content accounts, for adults 18+ only. Follow your local laws.',
+  fPrivacy:'No accounts, no tracking cookies. Age confirmation and theme preference stay in your local browser.',
+  fSubmit:'Submit', fContact:'Contact / Takedown',
+  gateTitle:'Adult content ahead', gateBody:'Creators in this tab may post adult-oriented content. Confirm you are 18 or older to continue?',
+  gateYes:'I am 18+, continue', gateNo:'Go back',
+  copied:'Copied ✓'
+}};
+
+/* ===== state & helpers ===== */
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const NSFW_TABS = ['flj','photo'];
+let lang = 'zh';
+let tab = 'all';
+let query = '';
+let pendingTab = null;
+const t = k => { const L = I18N[lang] || {}; return (k in L ? L[k] : undefined) ?? I18N.zh[k] ?? k; };
+
+function initLang(){
+  const p = new URLSearchParams(location.search).get('lang');
+  let saved = null;
+  try{ saved = localStorage.getItem('xhot_lang'); }catch(e){}
+  if (p === 'zh' || p === 'en') lang = p;
+  else if (saved === 'zh' || saved === 'en') lang = saved;
+  else lang = (navigator.language || 'zh').toLowerCase().startsWith('zh') ? 'zh' : 'en';
+}
+function setLang(l, sync){
+  lang = l;
+  try{ localStorage.setItem('xhot_lang', l); }catch(e){}
+  if (sync) history.replaceState(null, '', l === 'zh' ? location.pathname + location.hash : '?lang=en' + location.hash);
+  applyI18n(); renderList(); renderMeta();
+}
+function applyI18n(){
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  document.title = t('title');
+  const md = document.querySelector('meta[name="description"]');
+  if (md) md.setAttribute('content', t('desc'));
+  const ogd = document.querySelector('meta[property="og:description"]');
+  const ogt = document.querySelector('meta[property="og:title"]');
+  if (ogd) ogd.setAttribute('content', t('tagline'));
+  if (ogt) ogt.setAttribute('content', t('title').split(' — ')[0]);
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.getAttribute('data-i18n')); });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.setAttribute('placeholder', t(el.getAttribute('data-i18n-ph'))); });
+  $('btnLang').textContent = lang === 'zh' ? 'EN' : '中文';
+}
+function initTheme(){
+  let th = null;
+  try{ th = localStorage.getItem('xhot_theme'); }catch(e){}
+  if (th !== 'dark' && th !== 'light') th = 'dark';
+  document.documentElement.dataset.theme = th;
+  $('btnTheme').textContent = th === 'dark' ? '☀️' : '🌙';
+}
+function toggleTheme(){
+  const th = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = th;
+  try{ localStorage.setItem('xhot_theme', th); }catch(e){}
+  $('btnTheme').textContent = th === 'dark' ? '☀️' : '🌙';
+}
+
+/* ===== ranking render ===== */
+const PALS = [['#ff4d7d','#ff8a4d'],['#8a5cff','#5cc8ff'],['#22b573','#5cc8ff'],['#f5b52e','#ff5c8a'],['#ff6b3d','#f5b52e'],['#5c7cff','#b45cff']];
+const ranked = [...BLOGGERS].sort((a,b) => b.f - a.f);
+const rankOf = Object.fromEntries(ranked.map((b,i) => [b.h, i + 1]));
+
+function fmtF(n){
+  if (lang === 'zh'){
+    if (n >= 1e8) return trim0((n/1e8).toFixed(2)) + '亿';
+    if (n >= 1e4) return trim0((n/1e4).toFixed(1)) + '万';
+    return String(n);
+  }
+  if (n >= 1e6) return trim0((n/1e6).toFixed(2)) + 'M';
+  if (n >= 1e3) return trim0((n/1e3).toFixed(1)) + 'K';
+  return String(n);
+}
+const trim0 = s => s.replace(/\.0+$/,'').replace(/(\.\d*?)0+$/,'$1');
+
+function filtered(){
+  const q = query.trim().toLowerCase();
+  return ranked.filter(b => {
+    if (tab === 'flj' && !b.c.includes('flj')) return false;
+    if (tab === 'photo' && !b.c.includes('photo')) return false;
+    if (q && !(b.n.toLowerCase().includes(q) || b.h.toLowerCase().includes(q))) return false;
+    return true;
+  });
+}
+function renderList(){
+  const list = $('list');
+  const rows = filtered();
+  $('count').textContent = t('countTpl').replace('{n}', rows.length);
+  $('empty').hidden = rows.length > 0;
+  list.innerHTML = rows.map(b => {
+    const r = rankOf[b.h];
+    const [g1,g2] = PALS[b.h.length % PALS.length];
+    const av = b.av
+      ? '<span class="av"><img src="' + esc(b.av) + '" alt="" loading="lazy" onerror="this.parentNode.textContent=\'' + esc(b.n[0]) + '\'"></span>'
+      : '<span class="av" style="--g1:' + g1 + ';--g2:' + g2 + '">' + esc(b.n[0]) + '</span>';
+    const chips = b.c.map(c => '<span class="chip">' + esc(c === 'flj' ? t('catFlj') : t('catPhoto')) + '</span>').join('')
+      + (NSFW_TABS.some(x => b.c.includes(x)) ? ' <span class="chip">🔞 ' + t('c18') + '</span>' : '');
+    return '<li class="card r' + (r <= 3 ? r : '') + '">'
+      + '<div class="rk">#' + r + '</div>' + av
+      + '<div class="info"><div class="nm">' + esc(b.n) + chips + '</div>'
+      + '<div class="hd">@' + esc(b.h) + '</div>'
+      + '<div class="ds">' + esc(b.d[lang] || b.d.zh) + '</div></div>'
+      + '<div class="right"><div class="fc">' + fmtF(b.f) + '</div><div class="fl">' + t('followers') + '</div>'
+      + '<div class="acts"><a class="pri" href="https://x.com/' + esc(b.h) + '" target="_blank" rel="noopener noreferrer">' + esc(t('btnHome')) + '</a>'
+      + '<button type="button" data-share="' + esc(b.h) + '">' + esc(t('btnShare')) + '</button></div></div>'
+      + '</li>';
+  }).join('');
+}
+function renderMeta(){
+  $('metabar').innerHTML = t('metaCount') + ' <b>' + BLOGGERS.length + '</b> ' + t('metaCount2')
+    + ' · ' + t('updated') + ' <b>' + META.updated + '</b> · ' + t('est');
+}
+
+/* ===== share ===== */
+function tweet(text, url){
+  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url || SITE), '_blank', 'noopener');
+}
+function shareBlogger(handle){
+  const b = BLOGGERS.find(x => x.h === handle);
+  if (!b) return;
+  tweet(t('shareText').replace('{name}', b.n).replace('{rank}', rankOf[b.h]), SITE + '?ref=' + encodeURIComponent(handle));
+}
+
+/* ===== tabs & age gate ===== */
+function is18(){ try{ return localStorage.getItem('xhot18') === '1'; }catch(e){ return false; } }
+function goTab(id, syncHash){
+  if (NSFW_TABS.includes(id) && !is18()){
+    pendingTab = id;
+    $('gate').hidden = false;
+    return;
+  }
+  tab = id;
+  $('gate').hidden = true;
+  document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === id));
+  renderList();
+  window.scrollTo({ top: 0 });
+  if (syncHash !== false) history.replaceState(null, '', location.pathname + location.search + (id === 'all' ? '' : '#' + id));
+}
+
+/* ===== events ===== */
+$('tabs').addEventListener('click', e => {
+  const b = e.target.closest('button[data-tab]');
+  if (b) goTab(b.dataset.tab);
+});
+$('q').addEventListener('input', e => { query = e.target.value; renderList(); });
+$('btnLang').addEventListener('click', () => setLang(lang === 'zh' ? 'en' : 'zh', true));
+$('btnTheme').addEventListener('click', toggleTheme);
+$('list').addEventListener('click', e => {
+  const b = e.target.closest('button[data-share]');
+  if (b) shareBlogger(b.dataset.share);
+});
+$('btnShareSite').addEventListener('click', () => tweet(t('shareSiteText')));
+$('gateYes').addEventListener('click', () => {
+  try{ localStorage.setItem('xhot18', '1'); }catch(e){}
+  const go = pendingTab || 'all';
+  pendingTab = null;
+  goTab(go);
+});
+$('gateNo').addEventListener('click', () => { pendingTab = null; $('gate').hidden = true; });
+$('gate').addEventListener('click', e => { if (e.target === $('gate')) { pendingTab = null; $('gate').hidden = true; } });
+
+/* ===== boot ===== */
+initLang();
+applyI18n();
+initTheme();
+renderMeta();
+if (META.demo) $('demoNotice').style.display = '';
+else $('demoNotice').style.display = 'none';
+const h0 = location.hash.replace('#','');
+goTab(['all','flj','photo'].includes(h0) ? h0 : 'all', false);
+</script>
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6a164def7d63477cba60148b8417ca95"}'></script>
+</body>
+</html>

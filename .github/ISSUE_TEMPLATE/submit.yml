@@ -1,0 +1,58 @@
+name: 提交收录 / Submit a creator
+description: 提交 X（Twitter）博主收录申请（免费） / Submit a creator for listing (free)
+title: "[收录] @"
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请填写以下信息，审核通过后即可上榜（一般 1–3 天）。
+        Fill in the details below; listings are usually reviewed within 1–3 days.
+  - type: input
+    id: handle
+    attributes:
+      label: X 用户名 / Handle *
+      description: 不带 @，需与主页一致 / Without @, must match the profile
+      placeholder: example_handle
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: 显示名 / Display name *
+    validations:
+      required: true
+  - type: input
+    id: followers
+    attributes:
+      label: 当前粉丝数（约数即可）/ Current followers (approx.) *
+      placeholder: "128000"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 分类 / Category（可多选 / multiple allowed） *
+      multiple: true
+      options:
+        - label: 福利姬 / 18+ creator
+        - label: 私密摄影 / Boudoir
+    validations:
+      required: true
+  - type: textarea
+    id: bio
+    attributes:
+      label: 一句话简介 / One-line bio
+      description: 中英文均可，审核后展示在榜单卡片上 / Shown on the ranking card
+      placeholder: 每周更新 COS 与写真，互动活跃…
+  - type: checkboxes
+    id: attest
+    attributes:
+      label: 确认项 / Attestations
+      options:
+        - label: 我是博主本人，或已获得博主同意提交 / I am the creator or have their consent
+          required: true
+        - label: 账号内容符合 X 平台规则；成人向账号已开启敏感内容标记 / Content complies with X rules; adult accounts have sensitive-media settings on
+          required: true
+        - label: 同意信息被公开收录与展示，可随时申请修改或下架 / Consent to public listing; can request edits or removal anytime
+          required: true
