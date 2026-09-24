@@ -238,22 +238,58 @@ footer a{color:var(--chiptx)}
  * d: 双语简介；av: 头像 URL（可留空，留空用首字母渐变头像）；add: 收录月份
  */
 const SITE = 'https://tliens.github.io/xhot/';
-const META = { updated: '2026-09-24', demo: true };
+const META = { updated: '2026-09-24', demo: false };
 const BLOGGERS = [
-  { h:'demo_yuki',  n:'雪兔 Yuki',  f:1823000, c:['flj','photo'], d:{zh:'示例数据：每周更新 COS 与写真，互动活跃',en:'Demo entry: weekly cosplay & photo sets'}, av:'', add:'2026-08' },
-  { h:'demo_momo',  n:'桃桃 MoMo',  f:1568000, c:['flj'],         d:{zh:'示例数据：日系写真博主，粉丝增长快',en:'Demo entry: JP-style photo creator'}, av:'', add:'2026-08' },
-  { h:'demo_ling',  n:'灵酱',       f:1342000, c:['photo'],       d:{zh:'示例数据：私密摄影工作室主理人',en:'Demo entry: boudoir studio photographer'}, av:'', add:'2026-08' },
-  { h:'demo_karin', n:'Karin',      f:1215000, c:['flj'],         d:{zh:'示例数据：定期直播 + 会员专属内容',en:'Demo entry: streams + members-only sets'}, av:'', add:'2026-08' },
-  { h:'demo_sea',   n:'小海',       f:986000,  c:['photo'],       d:{zh:'示例数据：胶片质感人像摄影',en:'Demo entry: film-look portrait photography'}, av:'', add:'2026-08' },
-  { h:'demo_ritsu', n:'莉茨',       f:871000,  c:['flj'],         d:{zh:'示例数据：COS 妹子，漫展常客',en:'Demo entry: cosplayer, con regular'}, av:'', add:'2026-08' },
-  { h:'demo_nana',  n:'Nana',       f:764000,  c:['photo','flj'], d:{zh:'示例数据：私房 + 旅行写真',en:'Demo entry: boudoir + travel sets'}, av:'', add:'2026-08' },
-  { h:'demo_mei',   n:'小梅',       f:650000,  c:['photo'],       d:{zh:'示例数据：光影人像，风格干净',en:'Demo entry: clean light-portrait style'}, av:'', add:'2026-08' },
-  { h:'demo_aya',   n:'绫',         f:543000,  c:['flj'],         d:{zh:'示例数据：JK / 女仆系内容为主',en:'Demo entry: JK & maid outfits'}, av:'', add:'2026-08' },
-  { h:'demo_kuku',  n:'酷酷',       f:439000,  c:['photo'],       d:{zh:'示例数据：城市夜景人像',en:'Demo entry: urban night portraits'}, av:'', add:'2026-08' },
-  { h:'demo_miu',   n:'咪呜',       f:326000,  c:['flj'],         d:{zh:'示例数据：元气系短视频 + 图文',en:'Demo entry: energetic clips + photos'}, av:'', add:'2026-08' },
-  { h:'demo_sasa',  n:'纱纱',       f:251000,  c:['photo'],       d:{zh:'示例数据：室内自然光私房',en:'Demo entry: natural-light indoor sets'}, av:'', add:'2026-08' },
-  { h:'demo_ruri',  n:'琉璃',       f:187000,  c:['flj'],         d:{zh:'示例数据：二次元 COS 新人',en:'Demo entry: anime cosplay, rising'}, av:'', add:'2026-08' },
-  { h:'demo_pomu',  n:'小蓬',       f:98000,   c:['photo'],       d:{zh:'示例数据：小众胶片私房',en:'Demo entry: niche film boudoir'}, av:'', add:'2026-08' },
+  { h:'Anaimiya',       n:'Naimi奶咪',              f:4310000, c:['flj'],         d:{zh:'中文区头部成人内容创作者，高清自制视频与图片更新频繁',en:'Top Chinese-language adult creator with frequent HD self-produced updates'}, av:'', add:'2026-09' },
+  { h:'waifupupu',      n:'♡pupuwaifu♡',            f:3300000, c:['flj'],         d:{zh:'人气反差系创作者，订阅制内容运营',en:'Popular contrast-style creator running subscription content'}, av:'', add:'2026-09' },
+  { h:'HongKong_Doll',  n:'HongKongDoll',           f:3180000, c:['flj'],         d:{zh:'香港知名创作者，高清自拍视频全网广泛流传',en:'Well-known Hong Kong creator, widely shared HD self-shot videos'}, av:'', add:'2026-09' },
+  { h:'kunkunkun188',   n:'困困狗',                  f:1950000, c:['flj'],         d:{zh:'新晋高人气创作者，日常更新身材与生活分享',en:'Fast-rising creator with daily body & lifestyle posts'}, av:'', add:'2026-09' },
+  { h:'SpicygumL',      n:'JuneLiu SpicyGum🍬',     f:1840000, c:['flj'],         d:{zh:'知名成人模特，多平台发布高清自制内容',en:'Renowned adult model publishing HD content across platforms'}, av:'', add:'2026-09' },
+  { h:'lvmaoshetuite',  n:'㊙️绿帽社🍀',             f:1380000, c:['flj'],         d:{zh:'主题向创作者内容与资源分享账号',en:'Themed creator content and resource sharing account'}, av:'', add:'2026-09' },
+  { h:'FortuneCutie00', n:'FortuneCutie饼干姐姐',    f:1320000, c:['flj','photo'], d:{zh:'甜美风格写真与福利内容创作者',en:'Sweet-style photo sets and adult content creator'}, av:'', add:'2026-09' },
+  { h:'joycelyn52011',  n:'江江',                    f:1110000, c:['flj'],         d:{zh:'日常更新私密向内容的创作者',en:'Creator sharing daily intimate content'}, av:'', add:'2026-09' },
+  { h:'sxeyuki',        n:'Sexy Yuki',              f:1090000, c:['flj'],         d:{zh:'佛系日更成人向内容创作者',en:'Laid-back daily adult content creator'}, av:'', add:'2026-09' },
+  { h:'dljingxiang',    n:'静香',                    f:1020000, c:['flj'],         d:{zh:'中文区人气创作者，专注私密视觉内容',en:'Popular Chinese creator focused on intimate visuals'}, av:'', add:'2026-09' },
+  { h:'watever177',     n:'17°',                    f:920000,  c:['flj'],         d:{zh:'原创 NSFW 创作者，多渠道订阅内容',en:'Original NSFW creator with multi-channel subscriptions'}, av:'', add:'2026-09' },
+  { h:'azhua1997',      n:'阿朱啊',                  f:890000,  c:['flj'],         d:{zh:'老牌人气创作者，日常写真与身材分享',en:'Veteran popular creator sharing daily photo sets'}, av:'', add:'2026-09' },
+  { h:'TiTi40511552',   n:'🍑♡TiTi鈦合金♡ 🍑',      f:950000,  c:['flj','photo'], d:{zh:'COS 与二次元艺术写真结合的 NSFW 模特',en:'NSFW model combining cosplay and anime-style art photography'}, av:'', add:'2026-09' },
+  { h:'oshiximiya',     n:'国服第一瑶',              f:870000,  c:['flj'],         d:{zh:'露脸向内容与吃播系列创作者',en:'Face-revealing content and mukbang series creator'}, av:'', add:'2026-09' },
+  { h:'nana_taipei',    n:'Nana',                   f:870000,  c:['flj','photo'], d:{zh:'台湾模特风写真与视频创作者',en:'Taiwanese model-style photo and video creator'}, av:'', add:'2026-09' },
+  { h:'12baegirl',      n:'♡† 𝐍𝐨. 𝟏𝟐 † 🕸️',       f:870000,  c:['flj'],         d:{zh:'主题化运营的福利内容博主',en:'Themed adult content creator'}, av:'', add:'2026-09' },
+  { h:'kitty2002102',   n:'kitty2002102',           f:820000,  c:['flj'],         d:{zh:'原创 solo 视频内容创作者',en:'Original solo video content creator'}, av:'', add:'2026-09' },
+  { h:'WANIMAL912',     n:'WANIMAL | Official',     f:800000,  c:['photo'],       d:{zh:'人体艺术摄影师，RAW 风格光影表达',en:'Fine-art body photographer with a raw, light-driven style'}, av:'', add:'2026-09' },
+  { h:'tiaotiaosheep',  n:'跳跳羊💃',                f:750000,  c:['flj'],         d:{zh:'御姐风原创认证内容创作者',en:'Mature-style creator with verified original content'}, av:'', add:'2026-09' },
+  { h:'gulililucky',    n:'Gulili谷鲤里',           f:750000,  c:['flj'],         d:{zh:'测评与情趣用品 vlog 类创作者',en:'Review and adult-toy vlog creator'}, av:'', add:'2026-09' },
+  { h:'vasileva1122',   n:'瓦西列娃的日记本',        f:690000,  c:['flj','photo'], d:{zh:'日记式私密内容与写真分享',en:'Diary-style intimate content and photo sets'}, av:'', add:'2026-09' },
+  { h:'bigcat_mia',     n:'高橋尤美',                f:690000,  c:['flj'],         d:{zh:'猫娘人设的甜系日常内容创作者',en:'Catgirl-persona creator with daily sweet content'}, av:'', add:'2026-09' },
+  { h:'kechunyaoll',    n:'𝓊𝓃𝒹𝓇ℯ𝓈𝓈',               f:640000,  c:['photo','flj'], d:{zh:'氛围感人像与私密摄影向内容',en:'Mood-driven portraits and intimate photography'}, av:'', add:'2026-09' },
+  { h:'alantop1069',    n:'🅰️🅛🅐🅝 600K TOP 1%',     f:640000,  c:['flj'],         d:{zh:'台湾成人向视频内容创作者',en:'Taiwanese adult video creator'}, av:'', add:'2026-09' },
+  { h:'qianqianluoluo', n:'芊落',                    f:580000,  c:['flj','photo'], d:{zh:'清纯反差风写真与日常私密分享',en:'Pure-contrast photo sets and daily intimate shares'}, av:'', add:'2026-09' },
+  { h:'rercardo',       n:'九条南无',                f:570000,  c:['flj'],         d:{zh:'病娇人设 NSFW 内容创作者',en:'Yandere-persona NSFW creator'}, av:'', add:'2026-09' },
+  { h:'madousuchang',   n:'madousuchang',           f:560000,  c:['flj'],         d:{zh:'成人影片预览与资讯分享',en:'Adult film previews and info sharing'}, av:'', add:'2026-09' },
+  { h:'Mr_lu66',        n:'Mr_lu66',                f:520000,  c:['flj','photo'], d:{zh:'可爱系少女风 COS 与私房写真',en:'Cute-style cosplay and boudoir photo sets'}, av:'', add:'2026-09' },
+  { h:'yuzuki_shiroko', n:'yuzuki_shiroko',         f:480000,  c:['flj'],         d:{zh:'中文区人气成人内容博主',en:'Popular Chinese-language adult creator'}, av:'', add:'2026-09' },
+  { h:'Slut_Xi',        n:'Slut_Xi',                f:450000,  c:['flj'],         d:{zh:'腿控向视觉内容创作者',en:'Leg-focused visual content creator'}, av:'', add:'2026-09' },
+  { h:'yunij98',        n:'yunij98',                f:420000,  c:['flj'],         d:{zh:'反差风福利内容创作者',en:'Contrast-style adult content creator'}, av:'', add:'2026-09' },
+  { h:'xueqisama',      n:'xueqisama',              f:400000,  c:['flj','photo'], d:{zh:'COS 与私密写真结合的创作者',en:'Creator combining cosplay and intimate photo sets'}, av:'', add:'2026-09' },
+  { h:'tanhuajingxuan1',n:'探花精选',                f:380000,  c:['flj'],         d:{zh:'探花类国产内容精选分享',en:'Curated domestic amateur content sharing'}, av:'', add:'2026-09' },
+  { h:'EppleUr',        n:'EppleUr',                f:380000,  c:['photo'],       d:{zh:'高赞原创人体与私房摄影',en:'Highly liked original figure and boudoir photography'}, av:'', add:'2026-09' },
+  { h:'nvpusafuliji',   n:'女菩萨福利姬/每日大赛',    f:340000,  c:['flj'],         d:{zh:'每日创作者内容分享账号',en:'Daily creator content share account'}, av:'', add:'2026-09' },
+  { h:'battery1524',    n:'Battery狐姬',            f:320000,  c:['flj'],         d:{zh:'狐姬人设定制内容创作者',en:'Fox-girl persona custom content creator'}, av:'', add:'2026-09' },
+  { h:'tutushunli',     n:'白鸽夫妻',                f:320000,  c:['flj','photo'], d:{zh:'夫妻档私房写真与视频内容',en:'Couple boudoir photo sets and videos'}, av:'', add:'2026-09' },
+  { h:'Meiridasai_7',   n:'每日大赛',                f:300000,  c:['flj'],         d:{zh:'国产创作者内容聚合分享',en:'Domestic creator content aggregation'}, av:'', add:'2026-09' },
+  { h:'JiesheSf',       n:'杰摄📸私房',             f:300000,  c:['photo'],       d:{zh:'私房摄影作品与拍摄教学',en:'Boudoir photography and shooting tutorials'}, av:'', add:'2026-09' },
+  { h:'heteroneedhelp', n:'一爱女必须吃点好的',      f:280000,  c:['flj'],         d:{zh:'女性向 NSFW 文字与话题内容',en:'Female-oriented NSFW writing and topics'}, av:'', add:'2026-09' },
+  { h:'Boerbangdan',    n:'云境社区原创榜单',        f:230000,  c:['flj'],         d:{zh:'原创创作者榜单与社区内容聚合',en:'Original creator rankings and community curation'}, av:'', add:'2026-09' },
+  { h:'liqunsifang',    n:'利群📸私房',             f:140000,  c:['photo'],       d:{zh:'私房摄影创作与素人约拍',en:'Boudoir photography and amateur shoots'}, av:'', add:'2026-09' },
+  { h:'yuertianshi',    n:'小小愉儿',                f:80000,   c:['flj'],         d:{zh:'反差风日常内容创作者',en:'Contrast-style daily content creator'}, av:'', add:'2026-09' },
+  { h:'unababyainio',   n:'火爆李老师',              f:96000,   c:['photo','flj'], d:{zh:'足模写真与健身内容结合',en:'Foot-model photo sets combined with fitness content'}, av:'', add:'2026-09' },
+  { h:'xuexiaobanban',  n:'血小板板🚪',              f:57000,   c:['flj'],         d:{zh:'日常更新与线上业务内容',en:'Daily updates and online services'}, av:'', add:'2026-09' },
+  { h:'FLJ_xiaomei',    n:'福利姬—小美💋',          f:34000,   c:['flj'],         d:{zh:'日更福利向内容的创作者',en:'Daily-updating adult content creator'}, av:'', add:'2026-09' },
+  { h:'jiejie_waifu',   n:'姐姐的福利社',            f:29000,   c:['flj'],         d:{zh:'福利向日常内容创作者',en:'Daily adult content creator'}, av:'', add:'2026-09' },
+  { h:'push_no1',       n:'BigPi 大皮 人像攝影',     f:17000,   c:['photo'],       d:{zh:'台湾人像摄影合作与作品分享',en:'Taiwan portrait photography collabs and portfolio'}, av:'', add:'2026-09' },
+  { h:'e1703',          n:'𝖅𝖎 𝕴𝖒𝖆𝖌𝖊',              f:15000,   c:['photo'],       d:{zh:'广州（020）原创私房摄影，带水印作品',en:'Guangzhou (020) original watermarked boudoir works'}, av:'', add:'2026-09' },
+  { h:'coco051139830',  n:'福利姬（看主页）',        f:3000,    c:['flj'],         d:{zh:'系列内容免费预览与更新',en:'Free series previews and updates'}, av:'', add:'2026-09' },
 ];
 
 /* ===== i18n ===== */
@@ -402,9 +438,10 @@ function renderList(){
   list.innerHTML = rows.map(b => {
     const r = rankOf[b.h];
     const [g1,g2] = PALS[b.h.length % PALS.length];
+    const initial = [...b.n][0];
     const av = b.av
-      ? '<span class="av"><img src="' + esc(b.av) + '" alt="" loading="lazy" onerror="this.parentNode.textContent=\'' + esc(b.n[0]) + '\'"></span>'
-      : '<span class="av" style="--g1:' + g1 + ';--g2:' + g2 + '">' + esc(b.n[0]) + '</span>';
+      ? '<span class="av"><img src="' + esc(b.av) + '" alt="" loading="lazy" onerror="this.parentNode.textContent=\'' + esc(initial) + '\'"></span>'
+      : '<span class="av" style="--g1:' + g1 + ';--g2:' + g2 + '">' + esc(initial) + '</span>';
     const chips = b.c.map(c => '<span class="chip">' + esc(c === 'flj' ? t('catFlj') : t('catPhoto')) + '</span>').join('')
       + (NSFW_TABS.some(x => b.c.includes(x)) ? ' <span class="chip">🔞 ' + t('c18') + '</span>' : '');
     return '<li class="card r' + (r <= 3 ? r : '') + '">'
