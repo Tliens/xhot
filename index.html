@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>X热榜 — X/Twitter 博主人气排行 · 福利姬、私摄与独立开发推荐 | X Hot List</title>
-<meta name="description" content="X热榜收录热门 X（Twitter）博主，按粉丝数排名：福利姬、私密摄影等 18+ 创作者与独立开发出海开发者精选推荐，一键直达博主主页。免费提交收录，博主分享可带来真实流量。">
+<title>X热榜 — X/Twitter 博主每周人气排行 · 福利姬、私摄与独立开发推荐 | X Hot List</title>
+<meta name="description" content="X热榜是每周更新的 X（Twitter）博主粉丝数周榜：福利姬、私密摄影等 18+ 创作者与独立开发出海开发者按粉丝数排名，一键直达博主主页。免费提交收录，博主分享可带来真实流量。">
 <link rel="canonical" href="https://tliens.github.io/xhot/">
 <link rel="alternate" hreflang="zh" href="https://tliens.github.io/xhot/?lang=zh">
 <link rel="alternate" hreflang="en" href="https://tliens.github.io/xhot/?lang=en">
@@ -12,15 +12,15 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="X热榜 · X Hot List">
-<meta property="og:title" content="X热榜 — X/Twitter 博主人气排行">
-<meta property="og:description" content="按粉丝数排名的 X 博主榜单：福利姬、私密摄影与独立开发精选，一键直达主页。">
+<meta property="og:title" content="X热榜 — X/Twitter 每周人气排行">
+<meta property="og:description" content="每周更新的 X 博主粉丝数周榜：福利姬、私密摄影与独立开发精选，一键直达主页。">
 <meta property="og:url" content="https://tliens.github.io/xhot/">
 <meta property="og:image" content="https://tliens.github.io/xhot/og-image.png">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="X热榜 — X/Twitter Creator Rankings">
-<meta name="twitter:description" content="Ranked X/Twitter creator directory: 18+ picks, boudoir & indie hackers. One tap to each profile.">
+<meta name="twitter:description" content="Weekly X/Twitter creator rankings: 18+ picks, boudoir & indie hackers. One tap to each profile.">
 <meta name="twitter:image" content="https://tliens.github.io/xhot/og-image.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -28,10 +28,10 @@
   "applicationCategory":"EntertainmentApplication","operatingSystem":"Any",
   "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
   "inLanguage":["zh-CN","en"],
-  "description":"X（Twitter）博主人气排行榜，按粉丝数排名，含福利姬、私密摄影与独立开发推荐分区，可一键跳转博主主页。"},
+  "description":"X（Twitter）博主每周人气排行榜，按粉丝数排名，含福利姬、私密摄影与独立开发推荐分区，可一键跳转博主主页。"},
  {"@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"榜单数据从哪里来？",
-   "acceptedAnswer":{"@type":"Answer","text":"粉丝数为人工核对的约数（精确到万位），定期更新。本站为独立目录，与 X 官方无关。"}},
+   "acceptedAnswer":{"@type":"Answer","text":"本榜每周更新一次，粉丝数为人工核对的约数，仅供排序参考。本站为独立目录站，与 X 官方无关联。"}},
   {"@type":"Question","name":"怎么上榜 / 提交收录？",
    "acceptedAnswer":{"@type":"Answer","text":"点击页面的「提交收录」按钮，在 GitHub Issue 表单里填写博主信息，审核通过后即可免费上榜。"}},
   {"@type":"Question","name":"排名规则是什么？",
@@ -68,6 +68,7 @@ header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--b
 .ctrl button{background:var(--card);border:1px solid var(--line);color:var(--tx);border-radius:9px;min-width:38px;height:34px;padding:0 10px;font-size:13px;font-weight:700;transition:border-color .15s}
 .ctrl button:hover{border-color:var(--acc)}
 .hero{text-align:center;padding:38px 0 8px}
+.weekpill{display:inline-block;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;font-weight:800;font-size:13px;border-radius:20px;padding:6px 18px;margin-bottom:16px;letter-spacing:.5px;box-shadow:0 4px 14px color-mix(in srgb,var(--acc) 35%,transparent)}
 .hero h1{font-size:clamp(24px,5vw,34px);font-weight:800;line-height:1.25}
 .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .tagline{color:var(--tx2);margin-top:10px;font-size:15px}
@@ -84,8 +85,15 @@ header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--b
 .tools input:focus{border-color:var(--acc)}
 .count{align-self:center;font-size:12.5px;color:var(--tx2);white-space:nowrap}
 .cards{list-style:none;display:flex;flex-direction:column;gap:10px}
-.card{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;transition:transform .12s,border-color .12s,box-shadow .12s}
+.card{position:relative;overflow:hidden;display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;transition:transform .12s,border-color .12s,box-shadow .12s}
 .card:hover{border-color:var(--acc);transform:translateY(-1px);box-shadow:var(--shadow)}
+.bgb,.bgshade{position:absolute;inset:0;pointer-events:none}
+.bgb{z-index:0}
+.bgb img{width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:0;transition:opacity 1.1s ease}
+.bgb img.ok{opacity:1}
+.bgshade{z-index:1;background:linear-gradient(90deg,var(--card) 4%,color-mix(in srgb,var(--card) 55%,transparent) 100%);opacity:.95;transition:opacity .45s ease}
+.card:hover .bgshade{opacity:.7}
+.rk,.av,.info,.right{position:relative;z-index:2}
 .rk{flex:0 0 46px;text-align:center;font-weight:800;font-size:17px;color:var(--tx2)}
 .card.r1 .rk{color:var(--gold);font-size:21px}
 .card.r2 .rk{color:var(--silver);font-size:20px}
@@ -156,6 +164,7 @@ footer a{color:var(--chiptx)}
 
 <main class="wrap">
   <section class="hero">
+    <div class="weekpill" id="weekPill">🏆 2026 年第 39 周榜 · 09.21 – 09.27</div>
     <h1><span data-i18n="h1a">X/Twitter 博主</span><em data-i18n="h1b">人气排行榜</em></h1>
     <p class="tagline" data-i18n="tagline">按粉丝数排名 · 福利姬 / 私密摄影 / 独立开发精选 · 一键直达主页</p>
     <div class="metabar" id="metabar"></div>
@@ -189,7 +198,7 @@ footer a{color:var(--chiptx)}
     <h2 data-i18n="faqTitle">常见问题</h2>
     <details open>
       <summary data-i18n="fq1">榜单数据从哪里来？</summary>
-      <p data-i18n="fa1">粉丝数为人工核对的约数（精确到万位级别），定期更新。本站为独立目录站，与 X 官方无关联。</p>
+      <p data-i18n="fa1">本榜每周更新一次，粉丝数为人工核对的约数，仅供排序参考。本站为独立目录站，与 X 官方无关联。</p>
     </details>
     <details>
       <summary data-i18n="fq2">怎么上榜 / 提交收录？</summary>
@@ -235,8 +244,9 @@ footer a{color:var(--chiptx)}
 
 <script type="module">
 /* ===== 数据：手动维护。改这里即可，push 后约 1 分钟自动重新部署 =====
- * h: X 用户名（不带 @）；n: 显示名；f: 粉丝数（约数）；c: 分类 ['flj','photo']
- * d: 双语简介；av: 头像 URL（可留空，留空用首字母渐变头像）；add: 收录月份
+ * h: X 用户名（不带 @）；n: 显示名；f: 粉丝数（约数）；c: 分类 ['flj','photo','indie','sea']
+ * d: 双语简介；av: 头像 URL（可留空，留空用首字母渐变头像）
+ * bv: 主页封面 URL（可留空；填了会作为卡片背景，加载时渐显、悬停时遮罩渐隐）；add: 收录月份
  */
 const SITE = 'https://tliens.github.io/xhot/';
 const META = { updated: '2026-09-24', demo: false };
@@ -317,12 +327,13 @@ const BLOGGERS = [
 /* ===== i18n ===== */
 const I18N = {
 zh:{
-  title:'X热榜 — X/Twitter 博主人气排行 · 福利姬、私摄与独立开发推荐 | X Hot List',
-  desc:'X热榜收录热门 X（Twitter）博主，按粉丝数排名：福利姬、私密摄影等 18+ 创作者与独立开发出海开发者精选推荐，一键直达博主主页。免费提交收录，博主分享可带来真实流量。',
+  title:'X热榜 — X/Twitter 博主每周人气排行 · 福利姬、私摄与独立开发推荐 | X Hot List',
+  desc:'X热榜是每周更新的 X（Twitter）博主粉丝数周榜：福利姬、私密摄影等 18+ 创作者与独立开发出海开发者按粉丝数排名，一键直达博主主页。免费提交收录，博主分享可带来真实流量。',
   brand:'X热榜',
   h1a:'X/Twitter 博主', h1b:'人气排行榜',
-  tagline:'按粉丝数排名 · 福利姬 / 私密摄影 / 独立开发精选 · 一键直达主页',
-  metaCount:'共收录', metaCount2:'位博主', updated:'数据更新于', est:'粉丝数为约数',
+  tagline:'每周更新 · 福利姬 / 私密摄影 / 独立开发精选 · 一键直达主页',
+  metaCount:'共收录', metaCount2:'位博主', updated:'数据更新于', est:'粉丝数为约数', weekly:'每周更新',
+  weekTpl:'🏆 {y} 年第 {w} 周榜 · {range}',
   demoNotice:'⚠️ 当前榜单为示例数据（账号均带 demo 前缀），正式数据待博主收录后更新。',
   tabAll:'🏆 总榜', tabFlj:'🔞 福利姬', tabPhoto:'📷 私密摄影', tabIndie:'💻 独立开发',
   searchPh:'搜索名字或 @handle…', countTpl:'{n} 位博主', empty:'没有匹配的博主，换个关键词试试',
@@ -332,7 +343,7 @@ zh:{
   ctaBtn:'＋ 提交收录', shareSite:'📢 分享 X热榜',
   shareText:'「{name}」在 X热榜 排名 #{rank} 🔥', shareSiteText:'X热榜：X/Twitter 博主人气排行，看看你关注的博主排第几 🔥',
   faqTitle:'常见问题',
-  fq1:'榜单数据从哪里来？', fa1:'粉丝数为人工核对的约数（精确到万位级别），定期更新。本站为独立目录站，与 X 官方无关联。',
+  fq1:'榜单数据从哪里来？', fa1:'本榜每周更新一次，粉丝数为人工核对的约数，仅供排序参考。本站为独立目录站，与 X 官方无关联。',
   fq2:'怎么上榜 / 提交收录？', fa2:'点击「提交收录」按钮，在表单里填写博主用户名、分类和简介，审核通过后即可免费上榜。',
   fq3:'排名规则是什么？', fa3:'总榜按粉丝数从高到低排列；各分区沿用总榜名次，方便筛选浏览。',
   fq4:'福利姬 / 私密摄影分区有什么限制？', fa4:'这两个分区包含成人向内容链接，进入前需确认年满 18 岁。确认结果只保存在你自己的浏览器里，不会上传。',
@@ -346,12 +357,13 @@ zh:{
   copied:'已复制 ✓'
 },
 en:{
-  title:'X Hot List — X/Twitter Creator Rankings: 18+, Boudoir & Indie Devs',
-  desc:'X Hot List ranks popular X (Twitter) creators by followers: curated 18+ and boudoir picks plus indie hackers going global. One tap to each profile. Free submission — get real traffic from your rank badge.',
+  title:'X Hot List — Weekly X/Twitter Creator Rankings: 18+, Boudoir & Indie Devs',
+  desc:'X Hot List is a weekly-updated ranking of popular X (Twitter) creators: curated 18+ and boudoir picks plus indie hackers going global, ranked by followers. One tap to each profile. Free submission.',
   brand:'X Hot List',
   h1a:'X/Twitter Creator ', h1b:'Rankings',
-  tagline:'Ranked by followers · 18+ / Boudoir / Indie picks · One tap to each profile',
-  metaCount:'', metaCount2:'creators listed', updated:'Updated', est:'follower counts are estimates',
+  tagline:'Updated weekly · 18+ / Boudoir / Indie picks · One tap to each profile',
+  metaCount:'', metaCount2:'creators listed', updated:'Updated', est:'follower counts are estimates', weekly:'updated weekly',
+  weekTpl:'🏆 Week {w}, {y} Ranking · {range}',
   demoNotice:'⚠️ Demo data below (all handles prefixed with demo_). Real entries will be added after review.',
   tabAll:'🏆 All', tabFlj:'🔞 18+ Picks', tabPhoto:'📷 Boudoir', tabIndie:'💻 Indie Dev',
   searchPh:'Search name or @handle…', countTpl:'{n} creators', empty:'No creators match. Try another keyword.',
@@ -361,7 +373,7 @@ en:{
   ctaBtn:'＋ Submit', shareSite:'📢 Share X Hot List',
   shareText:'{name} is ranked #{rank} on X Hot List 🔥', shareSiteText:'X Hot List — rankings for X/Twitter creators. Where does your fave rank? 🔥',
   faqTitle:'FAQ',
-  fq1:'Where does the data come from?', fa1:'Follower counts are manually verified estimates, refreshed regularly. This is an independent directory, not affiliated with X.',
+  fq1:'Where does the data come from?', fa1:'The board updates once a week; follower counts are manually verified estimates for ranking reference. This is an independent directory, not affiliated with X.',
   fq2:'How do I get listed?', fa2:'Click Submit, fill in the handle, category and bio in the form. Listing is free once approved.',
   fq3:'How does ranking work?', fa3:'The main board sorts by follower count. Each tab keeps main-board ranks for easy browsing.',
   fq4:'Any restriction on 18+ tabs?', fa4:'Those tabs link to adult-oriented accounts. You must confirm you are 18+ first; the confirmation is stored only in your browser.',
@@ -397,7 +409,7 @@ function setLang(l, sync){
   lang = l;
   try{ localStorage.setItem('xhot_lang', l); }catch(e){}
   if (sync) history.replaceState(null, '', l === 'zh' ? location.pathname + location.hash : '?lang=en' + location.hash);
-  applyI18n(); renderList(); renderMeta();
+  applyI18n(); renderList(); renderMeta(); renderWeek();
 }
 function applyI18n(){
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
@@ -462,13 +474,16 @@ function renderList(){
     const r = rankOf[b.h];
     const [g1,g2] = PALS[b.h.length % PALS.length];
     const initial = [...b.n][0];
+    const bg = b.bv
+      ? '<div class="bgb"><img src="' + esc(b.bv) + '" alt="" loading="lazy" onload="this.classList.add(\'ok\')" onerror="this.parentNode.remove()"></div><div class="bgshade"></div>'
+      : '';
     const av = b.av
       ? '<span class="av"><img src="' + esc(b.av) + '" alt="" loading="lazy" onerror="this.parentNode.textContent=\'' + esc(initial) + '\'"></span>'
       : '<span class="av" style="--g1:' + g1 + ';--g2:' + g2 + '">' + esc(initial) + '</span>';
     const CATKEY = { flj:'catFlj', photo:'catPhoto', indie:'catIndie', sea:'catSea' };
     const chips = b.c.map(c => '<span class="chip">' + esc(t(CATKEY[c] || c)) + '</span>').join('')
       + (NSFW_TABS.some(x => b.c.includes(x)) ? ' <span class="chip">🔞 ' + t('c18') + '</span>' : '');
-    return '<li class="card r' + (r <= 3 ? r : '') + '">'
+    return '<li class="card r' + (r <= 3 ? r : '') + '">' + bg
       + '<div class="rk">#' + r + '</div>' + av
       + '<div class="info"><div class="nm">' + esc(b.n) + chips + '</div>'
       + '<div class="hd">@' + esc(b.h) + '</div>'
@@ -481,7 +496,28 @@ function renderList(){
 }
 function renderMeta(){
   $('metabar').innerHTML = t('metaCount') + ' <b>' + BLOGGERS.length + '</b> ' + t('metaCount2')
-    + ' · ' + t('updated') + ' <b>' + META.updated + '</b> · ' + t('est');
+    + ' · ' + t('updated') + ' <b>' + META.updated + '</b> · ' + t('weekly') + ' · ' + t('est');
+}
+function isoWeek(d){
+  const t2 = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const day = t2.getUTCDay() || 7;
+  t2.setUTCDate(t2.getUTCDate() + 4 - day);
+  const y0 = new Date(Date.UTC(t2.getUTCFullYear(), 0, 1));
+  return { y: t2.getUTCFullYear(), w: Math.ceil((((t2 - y0) / 86400000) + 1) / 7) };
+}
+function weekRange(d){
+  const t2 = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  const day = t2.getDay() || 7;
+  const mon = new Date(t2); mon.setDate(t2.getDate() - (day - 1));
+  const sun = new Date(mon); sun.setDate(mon.getDate() + 6);
+  const p = n => String(n).padStart(2, '0');
+  return p(mon.getMonth() + 1) + '.' + p(mon.getDate()) + ' – ' + p(sun.getMonth() + 1) + '.' + p(sun.getDate());
+}
+function renderWeek(){
+  const pp = META.updated.split('-').map(Number);
+  const d = new Date(pp[0], pp[1] - 1, pp[2]);
+  const wk = isoWeek(d);
+  $('weekPill').textContent = t('weekTpl').replace('{y}', wk.y).replace('{w}', wk.w).replace('{range}', weekRange(d));
 }
 
 /* ===== share ===== */
@@ -537,6 +573,7 @@ initLang();
 applyI18n();
 initTheme();
 renderMeta();
+renderWeek();
 if (META.demo) $('demoNotice').style.display = '';
 else $('demoNotice').style.display = 'none';
 const h0 = location.hash.replace('#','');
