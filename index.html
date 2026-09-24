@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>X热榜 — X/Twitter 博主人气排行 · 福利姬 & 私密摄影推荐 | X Hot List</title>
-<meta name="description" content="X热榜收录热门 X（Twitter）中文博主，按粉丝数排名，福利姬与私密摄影博主精选推荐，一键直达博主主页。免费提交收录，博主分享可带来真实流量。">
+<title>X热榜 — X/Twitter 博主人气排行 · 福利姬、私摄与独立开发推荐 | X Hot List</title>
+<meta name="description" content="X热榜收录热门 X（Twitter）博主，按粉丝数排名：福利姬、私密摄影等 18+ 创作者与独立开发出海开发者精选推荐，一键直达博主主页。免费提交收录，博主分享可带来真实流量。">
 <link rel="canonical" href="https://tliens.github.io/xhot/">
 <link rel="alternate" hreflang="zh" href="https://tliens.github.io/xhot/?lang=zh">
 <link rel="alternate" hreflang="en" href="https://tliens.github.io/xhot/?lang=en">
@@ -13,14 +13,14 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="X热榜 · X Hot List">
 <meta property="og:title" content="X热榜 — X/Twitter 博主人气排行">
-<meta property="og:description" content="按粉丝数排名的 X 中文博主榜单，福利姬 & 私密摄影精选推荐，一键直达主页。">
+<meta property="og:description" content="按粉丝数排名的 X 博主榜单：福利姬、私密摄影与独立开发精选，一键直达主页。">
 <meta property="og:url" content="https://tliens.github.io/xhot/">
 <meta property="og:image" content="https://tliens.github.io/xhot/og-image.png">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="X热榜 — X/Twitter Creator Rankings">
-<meta name="twitter:description" content="Ranked directory of Chinese X/Twitter creators. Boudoir & 18+ picks, one tap to each profile.">
+<meta name="twitter:description" content="Ranked X/Twitter creator directory: 18+ picks, boudoir & indie hackers. One tap to each profile.">
 <meta name="twitter:image" content="https://tliens.github.io/xhot/og-image.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -28,14 +28,14 @@
   "applicationCategory":"EntertainmentApplication","operatingSystem":"Any",
   "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
   "inLanguage":["zh-CN","en"],
-  "description":"X（Twitter）中文博主人气排行榜，按粉丝数排名，含福利姬与私密摄影博主推荐分区，可一键跳转博主主页。"},
+  "description":"X（Twitter）博主人气排行榜，按粉丝数排名，含福利姬、私密摄影与独立开发推荐分区，可一键跳转博主主页。"},
  {"@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"榜单数据从哪里来？",
    "acceptedAnswer":{"@type":"Answer","text":"粉丝数为人工核对的约数（精确到万位），定期更新。本站为独立目录，与 X 官方无关。"}},
   {"@type":"Question","name":"怎么上榜 / 提交收录？",
    "acceptedAnswer":{"@type":"Answer","text":"点击页面的「提交收录」按钮，在 GitHub Issue 表单里填写博主信息，审核通过后即可免费上榜。"}},
   {"@type":"Question","name":"排名规则是什么？",
-   "acceptedAnswer":{"@type":"Answer","text":"总榜按粉丝数从高到低排列；福利姬与私密摄影分区保留总榜名次，方便筛选浏览。"}},
+   "acceptedAnswer":{"@type":"Answer","text":"总榜按粉丝数从高到低排列；各分区沿用总榜名次，方便筛选浏览。"}},
   {"@type":"Question","name":"福利姬 / 私密摄影分区有什么限制？",
    "acceptedAnswer":{"@type":"Answer","text":"这两个分区包含成人向内容链接，进入前需确认年满 18 岁，确认结果只保存在你自己的浏览器里。"}},
   {"@type":"Question","name":"博主想修改或删除自己的信息怎么办？",
@@ -157,7 +157,7 @@ footer a{color:var(--chiptx)}
 <main class="wrap">
   <section class="hero">
     <h1><span data-i18n="h1a">X/Twitter 博主</span><em data-i18n="h1b">人气排行榜</em></h1>
-    <p class="tagline" data-i18n="tagline">按粉丝数排名 · 福利姬 / 私密摄影精选 · 一键直达博主主页</p>
+    <p class="tagline" data-i18n="tagline">按粉丝数排名 · 福利姬 / 私密摄影 / 独立开发精选 · 一键直达主页</p>
     <div class="metabar" id="metabar"></div>
   </section>
 
@@ -167,6 +167,7 @@ footer a{color:var(--chiptx)}
     <button data-tab="all" class="on" data-i18n="tabAll">🏆 总榜</button>
     <button data-tab="flj"><span data-i18n="tabFlj">🔞 福利姬</span><span class="ad">18+</span></button>
     <button data-tab="photo"><span data-i18n="tabPhoto">📷 私密摄影</span><span class="ad">18+</span></button>
+    <button data-tab="indie"><span data-i18n="tabIndie">💻 独立开发</span></button>
   </nav>
 
   <div class="tools">
@@ -196,7 +197,7 @@ footer a{color:var(--chiptx)}
     </details>
     <details>
       <summary data-i18n="fq3">排名规则是什么？</summary>
-      <p data-i18n="fa3">总榜按粉丝数从高到低排列；福利姬与私密摄影分区沿用总榜名次，方便筛选浏览。</p>
+      <p data-i18n="fa3">总榜按粉丝数从高到低排列；各分区沿用总榜名次，方便筛选浏览。</p>
     </details>
     <details>
       <summary data-i18n="fq4">福利姬 / 私密摄影分区有什么限制？</summary>
@@ -240,31 +241,31 @@ footer a{color:var(--chiptx)}
 const SITE = 'https://tliens.github.io/xhot/';
 const META = { updated: '2026-09-24', demo: false };
 const BLOGGERS = [
-  { h:'Anaimiya',       n:'Naimi奶咪',              f:4310000, c:['flj'],         d:{zh:'中文区头部成人内容创作者，高清自制视频与图片更新频繁',en:'Top Chinese-language adult creator with frequent HD self-produced updates'}, av:'', add:'2026-09' },
-  { h:'waifupupu',      n:'♡pupuwaifu♡',            f:3300000, c:['flj'],         d:{zh:'人气反差系创作者，订阅制内容运营',en:'Popular contrast-style creator running subscription content'}, av:'', add:'2026-09' },
-  { h:'HongKong_Doll',  n:'HongKongDoll',           f:3180000, c:['flj'],         d:{zh:'香港知名创作者，高清自拍视频全网广泛流传',en:'Well-known Hong Kong creator, widely shared HD self-shot videos'}, av:'', add:'2026-09' },
-  { h:'kunkunkun188',   n:'困困狗',                  f:1950000, c:['flj'],         d:{zh:'新晋高人气创作者，日常更新身材与生活分享',en:'Fast-rising creator with daily body & lifestyle posts'}, av:'', add:'2026-09' },
-  { h:'SpicygumL',      n:'JuneLiu SpicyGum🍬',     f:1840000, c:['flj'],         d:{zh:'知名成人模特，多平台发布高清自制内容',en:'Renowned adult model publishing HD content across platforms'}, av:'', add:'2026-09' },
+  { h:'Anaimiya',       n:'Naimi奶咪',              f:4310000, c:['flj'],         d:{zh:'中文区头部成人内容创作者，高清自制视频与图片更新频繁',en:'Top Chinese-language adult creator with frequent HD self-produced updates'}, av:'https://pbs.twimg.com/profile_images/1754234821663182848/vi711eoo.jpg', add:'2026-09' },
+  { h:'waifupupu',      n:'♡pupuwaifu♡',            f:3300000, c:['flj'],         d:{zh:'人气反差系创作者，订阅制内容运营',en:'Popular contrast-style creator running subscription content'}, av:'https://pbs.twimg.com/profile_images/2019545301451771904/vnE3PDT3.jpg', add:'2026-09' },
+  { h:'HongKong_Doll',  n:'HongKongDoll',           f:3180000, c:['flj'],         d:{zh:'香港知名创作者，高清自拍视频全网广泛流传',en:'Well-known Hong Kong creator, widely shared HD self-shot videos'}, av:'https://pbs.twimg.com/profile_images/1546185691872247809/9wUYnr58.jpg', add:'2026-09' },
+  { h:'kunkunkun188',   n:'困困狗',                  f:1950000, c:['flj'],         d:{zh:'新晋高人气创作者，日常更新身材与生活分享',en:'Fast-rising creator with daily body & lifestyle posts'}, av:'https://pbs.twimg.com/profile_images/1546226883838496768/5kHDoMYB.jpg', add:'2026-09' },
+  { h:'SpicygumL',      n:'JuneLiu SpicyGum🍬',     f:1840000, c:['flj'],         d:{zh:'知名成人模特，多平台发布高清自制内容',en:'Renowned adult model publishing HD content across platforms'}, av:'https://pbs.twimg.com/profile_images/1347830166152744960/MswfNm6h.jpg', add:'2026-09' },
   { h:'lvmaoshetuite',  n:'㊙️绿帽社🍀',             f:1380000, c:['flj'],         d:{zh:'主题向创作者内容与资源分享账号',en:'Themed creator content and resource sharing account'}, av:'', add:'2026-09' },
-  { h:'FortuneCutie00', n:'FortuneCutie饼干姐姐',    f:1320000, c:['flj','photo'], d:{zh:'甜美风格写真与福利内容创作者',en:'Sweet-style photo sets and adult content creator'}, av:'', add:'2026-09' },
+  { h:'FortuneCutie00', n:'FortuneCutie饼干姐姐',    f:1320000, c:['flj','photo'], d:{zh:'甜美风格写真与福利内容创作者',en:'Sweet-style photo sets and adult content creator'}, av:'https://pbs.twimg.com/profile_images/2076889809679990784/MeAyaCI0.jpg', add:'2026-09' },
   { h:'joycelyn52011',  n:'江江',                    f:1110000, c:['flj'],         d:{zh:'日常更新私密向内容的创作者',en:'Creator sharing daily intimate content'}, av:'', add:'2026-09' },
   { h:'sxeyuki',        n:'Sexy Yuki',              f:1090000, c:['flj'],         d:{zh:'佛系日更成人向内容创作者',en:'Laid-back daily adult content creator'}, av:'', add:'2026-09' },
   { h:'dljingxiang',    n:'静香',                    f:1020000, c:['flj'],         d:{zh:'中文区人气创作者，专注私密视觉内容',en:'Popular Chinese creator focused on intimate visuals'}, av:'', add:'2026-09' },
   { h:'watever177',     n:'17°',                    f:920000,  c:['flj'],         d:{zh:'原创 NSFW 创作者，多渠道订阅内容',en:'Original NSFW creator with multi-channel subscriptions'}, av:'', add:'2026-09' },
-  { h:'azhua1997',      n:'阿朱啊',                  f:890000,  c:['flj'],         d:{zh:'老牌人气创作者，日常写真与身材分享',en:'Veteran popular creator sharing daily photo sets'}, av:'', add:'2026-09' },
-  { h:'TiTi40511552',   n:'🍑♡TiTi鈦合金♡ 🍑',      f:950000,  c:['flj','photo'], d:{zh:'COS 与二次元艺术写真结合的 NSFW 模特',en:'NSFW model combining cosplay and anime-style art photography'}, av:'', add:'2026-09' },
+  { h:'azhua1997',      n:'阿朱啊',                  f:890000,  c:['flj'],         d:{zh:'老牌人气创作者，日常写真与身材分享',en:'Veteran popular creator sharing daily photo sets'}, av:'https://pbs.twimg.com/profile_images/1073187548812345345/8o7zXjNE.jpg', add:'2026-09' },
+  { h:'TiTi40511552',   n:'🍑♡TiTi鈦合金♡ 🍑',      f:950000,  c:['flj','photo'], d:{zh:'COS 与二次元艺术写真结合的 NSFW 模特',en:'NSFW model combining cosplay and anime-style art photography'}, av:'https://pbs.twimg.com/profile_images/1628362420451430407/p3j5Con-.jpg', add:'2026-09' },
   { h:'oshiximiya',     n:'国服第一瑶',              f:870000,  c:['flj'],         d:{zh:'露脸向内容与吃播系列创作者',en:'Face-revealing content and mukbang series creator'}, av:'', add:'2026-09' },
   { h:'nana_taipei',    n:'Nana',                   f:870000,  c:['flj','photo'], d:{zh:'台湾模特风写真与视频创作者',en:'Taiwanese model-style photo and video creator'}, av:'', add:'2026-09' },
   { h:'12baegirl',      n:'♡† 𝐍𝐨. 𝟏𝟐 † 🕸️',       f:870000,  c:['flj'],         d:{zh:'主题化运营的福利内容博主',en:'Themed adult content creator'}, av:'', add:'2026-09' },
   { h:'kitty2002102',   n:'kitty2002102',           f:820000,  c:['flj'],         d:{zh:'原创 solo 视频内容创作者',en:'Original solo video content creator'}, av:'', add:'2026-09' },
-  { h:'WANIMAL912',     n:'WANIMAL | Official',     f:800000,  c:['photo'],       d:{zh:'人体艺术摄影师，RAW 风格光影表达',en:'Fine-art body photographer with a raw, light-driven style'}, av:'', add:'2026-09' },
+  { h:'WANIMAL912',     n:'WANIMAL | Official',     f:800000,  c:['photo'],       d:{zh:'人体艺术摄影师，RAW 风格光影表达',en:'Fine-art body photographer with a raw, light-driven style'}, av:'https://pbs.twimg.com/profile_images/1235720748267757569/OFHuDHUT.jpg', add:'2026-09' },
   { h:'tiaotiaosheep',  n:'跳跳羊💃',                f:750000,  c:['flj'],         d:{zh:'御姐风原创认证内容创作者',en:'Mature-style creator with verified original content'}, av:'', add:'2026-09' },
   { h:'gulililucky',    n:'Gulili谷鲤里',           f:750000,  c:['flj'],         d:{zh:'测评与情趣用品 vlog 类创作者',en:'Review and adult-toy vlog creator'}, av:'', add:'2026-09' },
   { h:'vasileva1122',   n:'瓦西列娃的日记本',        f:690000,  c:['flj','photo'], d:{zh:'日记式私密内容与写真分享',en:'Diary-style intimate content and photo sets'}, av:'', add:'2026-09' },
   { h:'bigcat_mia',     n:'高橋尤美',                f:690000,  c:['flj'],         d:{zh:'猫娘人设的甜系日常内容创作者',en:'Catgirl-persona creator with daily sweet content'}, av:'', add:'2026-09' },
   { h:'kechunyaoll',    n:'𝓊𝓃𝒹𝓇ℯ𝓈𝓈',               f:640000,  c:['photo','flj'], d:{zh:'氛围感人像与私密摄影向内容',en:'Mood-driven portraits and intimate photography'}, av:'', add:'2026-09' },
   { h:'alantop1069',    n:'🅰️🅛🅐🅝 600K TOP 1%',     f:640000,  c:['flj'],         d:{zh:'台湾成人向视频内容创作者',en:'Taiwanese adult video creator'}, av:'', add:'2026-09' },
-  { h:'qianqianluoluo', n:'芊落',                    f:580000,  c:['flj','photo'], d:{zh:'清纯反差风写真与日常私密分享',en:'Pure-contrast photo sets and daily intimate shares'}, av:'', add:'2026-09' },
+  { h:'qianqianluoluo', n:'芊落',                    f:580000,  c:['flj','photo'], d:{zh:'清纯反差风写真与日常私密分享',en:'Pure-contrast photo sets and daily intimate shares'}, av:'https://pbs.twimg.com/profile_images/2016142175218581504/-13_VTm-.jpg', add:'2026-09' },
   { h:'rercardo',       n:'九条南无',                f:570000,  c:['flj'],         d:{zh:'病娇人设 NSFW 内容创作者',en:'Yandere-persona NSFW creator'}, av:'', add:'2026-09' },
   { h:'madousuchang',   n:'madousuchang',           f:560000,  c:['flj'],         d:{zh:'成人影片预览与资讯分享',en:'Adult film previews and info sharing'}, av:'', add:'2026-09' },
   { h:'Mr_lu66',        n:'Mr_lu66',                f:520000,  c:['flj','photo'], d:{zh:'可爱系少女风 COS 与私房写真',en:'Cute-style cosplay and boudoir photo sets'}, av:'', add:'2026-09' },
@@ -290,21 +291,42 @@ const BLOGGERS = [
   { h:'push_no1',       n:'BigPi 大皮 人像攝影',     f:17000,   c:['photo'],       d:{zh:'台湾人像摄影合作与作品分享',en:'Taiwan portrait photography collabs and portfolio'}, av:'', add:'2026-09' },
   { h:'e1703',          n:'𝖅𝖎 𝕴𝖒𝖆𝖌𝖊',              f:15000,   c:['photo'],       d:{zh:'广州（020）原创私房摄影，带水印作品',en:'Guangzhou (020) original watermarked boudoir works'}, av:'', add:'2026-09' },
   { h:'coco051139830',  n:'福利姬（看主页）',        f:3000,    c:['flj'],         d:{zh:'系列内容免费预览与更新',en:'Free series previews and updates'}, av:'', add:'2026-09' },
+  { h:'Fxtyoo',         n:'FX',                     f:199000,  c:['photo'],       d:{zh:'原创艺术私房摄影与约拍',en:'Original artistic boudoir photography and bookings'}, av:'', add:'2026-09' },
+  { h:'HikariSuse',     n:'摄影师素色',              f:11000,   c:['photo'],       d:{zh:'北京私房与情侣影像记录',en:'Beijing private and couple photography'}, av:'', add:'2026-09' },
+  { h:'Shanghaisfphoto',n:'魔都私房摄影📷',          f:9000,    c:['photo'],       d:{zh:'上海私房摄影师约片',en:'Shanghai boudoir photographer bookings'}, av:'', add:'2026-09' },
+  { h:'levelsio',       n:'levelsio',               f:961000,  c:['indie'],       d:{zh:'Indie Hacker 教父，多产品公开构建',en:'Godfather of indie hacking, multiple products in public'}, av:'https://pbs.twimg.com/profile_images/2077111020305162240/PwddgOau.jpg', add:'2026-09' },
+  { h:'rauchg',         n:'Guillermo Rauch',        f:881000,  c:['indie'],       d:{zh:'Vercel CEO，Next.js 创造者',en:'Vercel CEO, creator of Next.js'}, av:'https://pbs.twimg.com/profile_images/1783856060249595904/8TfcCN0r.jpg', add:'2026-09' },
+  { h:'gregisenberg',   n:'GREG ISENBERG',          f:717000,  c:['indie'],       d:{zh:'每日创业点子，Late Checkout 主理人',en:'Daily startup ideas, Late Checkout'}, av:'https://pbs.twimg.com/profile_images/1577116785656139776/5mi0qgTz.jpg', add:'2026-09' },
+  { h:'marclou',        n:'Marc Lou',               f:400000,  c:['indie'],       d:{zh:'ShipFast 等多产品快速出海',en:'ShipFast and multiple fast-shipped SaaS'}, av:'https://pbs.twimg.com/profile_images/2081903460199641088/YZJqLn39.jpg', add:'2026-09' },
+  { h:'shl',            n:'Sahil Lavingia',         f:392000,  c:['indie'],       d:{zh:'Gumroad 创始人',en:'Gumroad founder'}, av:'https://pbs.twimg.com/profile_images/1885323625542127616/-8EVOv3W.jpg', add:'2026-09' },
+  { h:'arvidkahl',      n:'Arvid Kahl',             f:210000,  c:['indie'],       d:{zh:'卖掉 FeedbackPanda，专注 BOOTSTRAP 教学',en:'Sold FeedbackPanda, teaches bootstrapping'}, av:'https://pbs.twimg.com/profile_images/1201525049766883328/QPimCC9z.jpg', add:'2026-09' },
+  { h:'tibo_maker',     n:'Tibo',                   f:209000,  c:['indie'],       d:{zh:'卖掉 Tweet Hunter，转向 AI 增长',en:'Sold Tweet Hunter, AI growth'}, av:'https://pbs.twimg.com/profile_images/1631931185180934144/59z_ZFKm.jpg', add:'2026-09' },
+  { h:'tdinh_me',       n:'Tony Dinh',              f:202000,  c:['indie'],       d:{zh:'TypingMind 作者，离开 FAANG 独立开发',en:'TypingMind maker, quit FAANG to go indie'}, av:'https://pbs.twimg.com/profile_images/1995658612677771266/TPla_3lg.jpg', add:'2026-09' },
+  { h:'dannypostma',    n:'Danny Postma',           f:184000,  c:['indie'],       d:{zh:'HeadshotPro AI 摄影产品',en:'HeadshotPro AI photography'}, av:'https://pbs.twimg.com/profile_images/1587046912490090496/kuBUqNkb.jpg', add:'2026-09' },
+  { h:'yongfook',       n:'Jon Yongfook',           f:172000,  c:['indie'],       d:{zh:'Bannerbear 图像自动化',en:'Bannerbear image automation'}, av:'https://pbs.twimg.com/profile_images/691543635779649536/TbHKbCCc.jpg', add:'2026-09' },
+  { h:'tualatrix',      n:'图拉鼎',                  f:112000,  c:['indie'],       d:{zh:'杭州独立开发者，macOS/iOS 工具',en:'Hangzhou indie dev, macOS/iOS tools'}, av:'https://pbs.twimg.com/profile_images/675270246509350912/lV9-F5ey.jpg', add:'2026-09' },
+  { h:'gefei55',        n:'哥飞',                    f:61000,   c:['indie','sea'], d:{zh:'中文出海 SEO 与 AI 工具站布道者',en:'Chinese SEO & AI tools overseas advocate'}, av:'https://pbs.twimg.com/profile_images/1600285780555202560/TE8ad_yJ.jpg', add:'2026-09' },
+  { h:'bourneliu66',    n:'刘小排',                  f:32000,   c:['indie','sea'], d:{zh:'AI 产品创始人，公开构建',en:'AI product founder building in public'}, av:'https://pbs.twimg.com/profile_images/1955860656919625728/sCkP_hTF.png', add:'2026-09' },
+  { h:'OwenYoungZh',    n:'Owen',                   f:25000,   c:['indie','sea'], d:{zh:'沉浸式翻译等工具出海',en:'Immersive Translate and tools going global'}, av:'https://pbs.twimg.com/profile_images/1315603145557385216/dQFmDtsf.jpg', add:'2026-09' },
+  { h:'indie_maker_fox',n:'Fox',                    f:16000,   c:['indie','sea'], d:{zh:'AI SaaS 模板与出海公开构建',en:'AI SaaS templates, build in public'}, av:'https://pbs.twimg.com/profile_images/1905643474952880129/HiunneWW.jpg', add:'2026-09' },
+  { h:'guishou_56',     n:'Niko',                   f:10000,   c:['indie','sea'], d:{zh:'中文独立开发者名单与 AI SaaS',en:'Chinese indie lists and AI SaaS'}, av:'', add:'2026-09' },
+  { h:'realcoreychiu',  n:'Corey Chiu',             f:5000,    c:['indie','sea'], d:{zh:'独立开发 + 环游世界写代码',en:'Indie developer coding while traveling'}, av:'', add:'2026-09' },
+  { h:'becool_me',      n:'BECOOL',                 f:5000,    c:['indie','sea'], d:{zh:'多款工具站独立开发',en:'Multiple tool sites indie dev'}, av:'', add:'2026-09' },
 ];
 
 /* ===== i18n ===== */
 const I18N = {
 zh:{
-  title:'X热榜 — X/Twitter 博主人气排行 · 福利姬 & 私密摄影推荐 | X Hot List',
-  desc:'X热榜收录热门 X（Twitter）中文博主，按粉丝数排名，福利姬与私密摄影博主精选推荐，一键直达博主主页。免费提交收录，博主分享可带来真实流量。',
+  title:'X热榜 — X/Twitter 博主人气排行 · 福利姬、私摄与独立开发推荐 | X Hot List',
+  desc:'X热榜收录热门 X（Twitter）博主，按粉丝数排名：福利姬、私密摄影等 18+ 创作者与独立开发出海开发者精选推荐，一键直达博主主页。免费提交收录，博主分享可带来真实流量。',
   brand:'X热榜',
   h1a:'X/Twitter 博主', h1b:'人气排行榜',
-  tagline:'按粉丝数排名 · 福利姬 / 私密摄影精选 · 一键直达博主主页',
+  tagline:'按粉丝数排名 · 福利姬 / 私密摄影 / 独立开发精选 · 一键直达主页',
   metaCount:'共收录', metaCount2:'位博主', updated:'数据更新于', est:'粉丝数为约数',
   demoNotice:'⚠️ 当前榜单为示例数据（账号均带 demo 前缀），正式数据待博主收录后更新。',
-  tabAll:'🏆 总榜', tabFlj:'🔞 福利姬', tabPhoto:'📷 私密摄影',
+  tabAll:'🏆 总榜', tabFlj:'🔞 福利姬', tabPhoto:'📷 私密摄影', tabIndie:'💻 独立开发',
   searchPh:'搜索名字或 @handle…', countTpl:'{n} 位博主', empty:'没有匹配的博主，换个关键词试试',
-  followers:'粉丝', catFlj:'福利姬', catPhoto:'私密摄影', c18:'18+',
+  followers:'粉丝', catFlj:'福利姬', catPhoto:'私密摄影', catIndie:'独立开发', catSea:'出海', c18:'18+',
   btnHome:'主页 ↗', btnShare:'分享',
   ctaTitle:'你是 X 博主？免费上榜', ctaBody:'提交你的账号信息，审核通过即可进入榜单。榜单会为每位博主带来真实的主页访问流量，也欢迎把你的排名分享给粉丝。',
   ctaBtn:'＋ 提交收录', shareSite:'📢 分享 X热榜',
@@ -312,7 +334,7 @@ zh:{
   faqTitle:'常见问题',
   fq1:'榜单数据从哪里来？', fa1:'粉丝数为人工核对的约数（精确到万位级别），定期更新。本站为独立目录站，与 X 官方无关联。',
   fq2:'怎么上榜 / 提交收录？', fa2:'点击「提交收录」按钮，在表单里填写博主用户名、分类和简介，审核通过后即可免费上榜。',
-  fq3:'排名规则是什么？', fa3:'总榜按粉丝数从高到低排列；福利姬与私密摄影分区沿用总榜名次，方便筛选浏览。',
+  fq3:'排名规则是什么？', fa3:'总榜按粉丝数从高到低排列；各分区沿用总榜名次，方便筛选浏览。',
   fq4:'福利姬 / 私密摄影分区有什么限制？', fa4:'这两个分区包含成人向内容链接，进入前需确认年满 18 岁。确认结果只保存在你自己的浏览器里，不会上传。',
   fq5:'博主想修改或删除自己的信息怎么办？', fa5:'在 GitHub 仓库提 Issue 说明情况即可，通常 48 小时内处理更正或下架。',
   fDisc:'本站为独立的第三方目录，与 X Corp. / Twitter 无任何关联；博主信息整理自公开资料，排名为约数仅供参考。',
@@ -324,16 +346,16 @@ zh:{
   copied:'已复制 ✓'
 },
 en:{
-  title:'X Hot List — X/Twitter Creator Rankings, Boudoir & 18+ Picks',
-  desc:'X Hot List ranks popular Chinese X (Twitter) creators by followers, with curated boudoir & 18+ picks. One tap to each profile. Free submission — get real traffic from your rank badge.',
+  title:'X Hot List — X/Twitter Creator Rankings: 18+, Boudoir & Indie Devs',
+  desc:'X Hot List ranks popular X (Twitter) creators by followers: curated 18+ and boudoir picks plus indie hackers going global. One tap to each profile. Free submission — get real traffic from your rank badge.',
   brand:'X Hot List',
   h1a:'X/Twitter Creator ', h1b:'Rankings',
-  tagline:'Ranked by followers · Boudoir / 18+ picks · One tap to each profile',
+  tagline:'Ranked by followers · 18+ / Boudoir / Indie picks · One tap to each profile',
   metaCount:'', metaCount2:'creators listed', updated:'Updated', est:'follower counts are estimates',
   demoNotice:'⚠️ Demo data below (all handles prefixed with demo_). Real entries will be added after review.',
-  tabAll:'🏆 All', tabFlj:'🔞 18+ Picks', tabPhoto:'📷 Boudoir',
+  tabAll:'🏆 All', tabFlj:'🔞 18+ Picks', tabPhoto:'📷 Boudoir', tabIndie:'💻 Indie Dev',
   searchPh:'Search name or @handle…', countTpl:'{n} creators', empty:'No creators match. Try another keyword.',
-  followers:'followers', catFlj:'18+ Creator', catPhoto:'Boudoir', c18:'18+',
+  followers:'followers', catFlj:'18+ Creator', catPhoto:'Boudoir', catIndie:'Indie Dev', catSea:'Going Global', c18:'18+',
   btnHome:'Profile ↗', btnShare:'Share',
   ctaTitle:'Are you a creator? Get listed free', ctaBody:'Submit your account and appear on the board after review. Your rank badge drives real profile visits — share it with your fans.',
   ctaBtn:'＋ Submit', shareSite:'📢 Share X Hot List',
@@ -341,7 +363,7 @@ en:{
   faqTitle:'FAQ',
   fq1:'Where does the data come from?', fa1:'Follower counts are manually verified estimates, refreshed regularly. This is an independent directory, not affiliated with X.',
   fq2:'How do I get listed?', fa2:'Click Submit, fill in the handle, category and bio in the form. Listing is free once approved.',
-  fq3:'How does ranking work?', fa3:'The main board sorts by follower count. The 18+ / Boudoir tabs keep main-board ranks for easy browsing.',
+  fq3:'How does ranking work?', fa3:'The main board sorts by follower count. Each tab keeps main-board ranks for easy browsing.',
   fq4:'Any restriction on 18+ tabs?', fa4:'Those tabs link to adult-oriented accounts. You must confirm you are 18+ first; the confirmation is stored only in your browser.',
   fq5:'How to fix or remove my info?', fa5:'Open an Issue on the GitHub repo describing the request. Corrections and takedowns are usually handled within 48 hours.',
   fDisc:'Independent third-party directory, not affiliated with X Corp. / Twitter. Info compiled from public sources; ranks are estimates.',
@@ -426,6 +448,7 @@ function filtered(){
   return ranked.filter(b => {
     if (tab === 'flj' && !b.c.includes('flj')) return false;
     if (tab === 'photo' && !b.c.includes('photo')) return false;
+    if (tab === 'indie' && !(b.c.includes('indie') || b.c.includes('sea'))) return false;
     if (q && !(b.n.toLowerCase().includes(q) || b.h.toLowerCase().includes(q))) return false;
     return true;
   });
@@ -442,7 +465,8 @@ function renderList(){
     const av = b.av
       ? '<span class="av"><img src="' + esc(b.av) + '" alt="" loading="lazy" onerror="this.parentNode.textContent=\'' + esc(initial) + '\'"></span>'
       : '<span class="av" style="--g1:' + g1 + ';--g2:' + g2 + '">' + esc(initial) + '</span>';
-    const chips = b.c.map(c => '<span class="chip">' + esc(c === 'flj' ? t('catFlj') : t('catPhoto')) + '</span>').join('')
+    const CATKEY = { flj:'catFlj', photo:'catPhoto', indie:'catIndie', sea:'catSea' };
+    const chips = b.c.map(c => '<span class="chip">' + esc(t(CATKEY[c] || c)) + '</span>').join('')
       + (NSFW_TABS.some(x => b.c.includes(x)) ? ' <span class="chip">🔞 ' + t('c18') + '</span>' : '');
     return '<li class="card r' + (r <= 3 ? r : '') + '">'
       + '<div class="rk">#' + r + '</div>' + av
@@ -516,7 +540,7 @@ renderMeta();
 if (META.demo) $('demoNotice').style.display = '';
 else $('demoNotice').style.display = 'none';
 const h0 = location.hash.replace('#','');
-goTab(['all','flj','photo'].includes(h0) ? h0 : 'all', false);
+goTab(['all','flj','photo','indie'].includes(h0) ? h0 : 'all', false);
 </script>
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6a164def7d63477cba60148b8417ca95"}'></script>
 </body>
