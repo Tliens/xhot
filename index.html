@@ -169,7 +169,7 @@ footer a{color:var(--chiptx)}
   <section class="hero">
     <div class="weekpill" id="weekPill">🏆 2026 年第 39 周榜 · 09.21 – 09.27</div>
     <h1><span data-i18n="h1a">X/Twitter 博主</span><em data-i18n="h1b">人气排行榜</em></h1>
-    <p class="tagline" data-i18n="tagline">每周更新 · 福利姬 / 私密摄影 / COS / 独立开发 / AI · 一键直达主页</p>
+    <p class="tagline" data-i18n="tagline">每周更新 · 福利姬 / 私密摄影 / COS / 开发 / AI / 开源 · 一键直达主页</p>
     <div class="metabar" id="metabar"></div>
   </section>
 
@@ -182,6 +182,7 @@ footer a{color:var(--chiptx)}
     <button data-tab="indie"><span data-i18n="tabIndie">💻 独立开发</span></button>
     <button data-tab="cos"><span data-i18n="tabCos">💎 COS·二次元</span></button>
     <button data-tab="ai"><span data-i18n="tabAi">🤖 AI</span></button>
+    <button data-tab="oss"><span data-i18n="tabOss">🐙 开源大神</span></button>
   </nav>
 
   <div class="tools">
@@ -356,7 +357,7 @@ const BLOGGERS = [
   { h:'ylecun',         n:'Yann LeCun',             f:1310000, c:['ai'],          d:{zh:'Meta 前首席 AI 科学家，图灵奖得主，深度学习先驱',en:'Former Meta Chief AI Scientist, Turing Award laureate, deep learning pioneer'}, av:'https://pbs.twimg.com/profile_images/1483577865056702469/rWA-3_T7.jpg', add:'2026-09' },
   { h:'AndrewYNg',      n:'Andrew Ng',              f:1900000, c:['ai'],          d:{zh:'DeepLearning.AI 创始人，Coursera 联合创始人，AI 教育与应用',en:'DeepLearning.AI founder, Coursera co-founder, AI education & applications'}, av:'https://pbs.twimg.com/profile_images/733174243714682880/oyG30NEH.jpg', add:'2026-09' },
   { h:'OpenAI',         n:'OpenAI',                 f:5380000, c:['ai'],          d:{zh:'OpenAI 官方账号，产品发布与研究更新',en:'Official OpenAI account for product releases and research'}, av:'https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW.jpg', add:'2026-09' },
-  { h:'simonw',         n:'Simon Willison',         f:227000,  c:['ai'],          d:{zh:'Django 联合创造者，Datasette 创造者，LLM 实践测试专家',en:'Django co-creator, Datasette creator, practical LLM testing expert'}, av:'https://pbs.twimg.com/profile_images/378800000261649705/be9cc55e64014e6d7663c50d7cb9fc75.jpeg', add:'2026-09' },
+  { h:'simonw',         n:'Simon Willison',         f:227000,  c:['ai','oss'],      d:{zh:'Django 联合创造者，Datasette 创造者，LLM 实践测试专家',en:'Django co-creator, Datasette creator, practical LLM testing expert'}, av:'https://pbs.twimg.com/profile_images/378800000261649705/be9cc55e64014e6d7663c50d7cb9fc75.jpeg', add:'2026-09' },
   { h:'emollick',       n:'Ethan Mollick',          f:392000,  c:['ai'],          d:{zh:'沃顿商学院教授，研究 AI 如何改变工作与教育',en:'Wharton professor studying how AI changes work and education'}, av:'https://pbs.twimg.com/profile_images/1601382188712398850/3AAOlqrX.jpg', add:'2026-09' },
   { h:'DarioAmodei',    n:'Dario Amodei',           f:825000,  c:['ai'],          d:{zh:'Anthropic CEO，安全与扩展相关研究',en:'Anthropic CEO, focuses on safety and scaling research'}, av:'https://pbs.twimg.com/profile_images/2015835742577012736/uOwdzrEz.jpg', add:'2026-09' },
   { h:'ClementDelangue',n:'clem 🤗',                f:703000,  c:['ai'],          d:{zh:'Hugging Face 联合创始人兼 CEO，开源 AI 平台',en:'Hugging Face co-founder & CEO, open collaborative AI platform'}, av:'https://pbs.twimg.com/profile_images/1100512198139498497/utHSJ4st.png', add:'2026-09' },
@@ -376,6 +377,45 @@ const BLOGGERS = [
   { h:'fchollet',       n:'François Chollet',       f:300000,  c:['ai'],          d:{zh:'Keras 创造者，ARC-AGI 相关工作',en:'Keras creator, ARC-AGI related work'}, av:'', add:'2026-09' },
   { h:'rasbt',          n:'Sebastian Raschka',      f:50000,   c:['ai'],          d:{zh:'机器学习实践与论文解读',en:'Machine learning practice and paper discussions'}, av:'', add:'2026-09' },
   { h:'chipro',         n:'Chip Huyen',             f:50000,   c:['ai'],          d:{zh:'AI 系统设计、评估与部署专家',en:'AI system design, evaluation and deployment expert'}, av:'', add:'2026-09' },
+  { h:'b0rk',           n:'🔎Julia Evans🔍',        f:192000,  c:['oss'],         d:{zh:'Linux、调试与网络可视化专家，jvns.ca 博客作者',en:'Linux, debugging and networking expert, author of jvns.ca'}, av:'https://pbs.twimg.com/profile_images/846106819391115264/iZAxk4qr.jpg', add:'2026-09' },
+  { h:'antirez',        n:'antirez',                f:82000,   c:['oss'],         d:{zh:'Redis 创造者，系统编程与开源深度思考',en:'Creator of Redis, deep thoughts on systems and open source'}, av:'https://pbs.twimg.com/profile_images/1779914746159882240/v6h2w9g0.jpg', add:'2026-09' },
+  { h:'danluu',         n:'Dan Luu',                f:48000,   c:['oss'],         d:{zh:'系统性能与工程判断力博客作者',en:'Systems performance and engineering judgment blogger'}, av:'https://pbs.twimg.com/profile_images/1472713753464500227/HJQvY70g.png', add:'2026-09' },
+  { h:'FiloSottile',    n:'Filippo Valsorda',       f:45000,   c:['oss'],         d:{zh:'Go 密码学维护者，mkcert、age 作者',en:'Go crypto maintainer, author of mkcert and age'}, av:'https://pbs.twimg.com/profile_images/1601128737751420928/3WVJbAMw.jpg', add:'2026-09' },
+  { h:'brandur',        n:'Brandur',                f:8000,    c:['oss'],         d:{zh:'Web API、Postgres 与软件韧性实践',en:'Web APIs, Postgres and software resilience'}, av:'https://pbs.twimg.com/profile_images/814528256632205312/tBisTEzd.jpg', add:'2026-09' },
+  { h:'yyx990803',      n:'Evan You',               f:300000,  c:['oss'],         d:{zh:'Vue.js 创造者',en:'Creator of Vue.js'}, av:'', add:'2026-09' },
+  { h:'gvanrossum',     n:'Guido van Rossum',       f:300000,  c:['oss'],         d:{zh:'Python 创造者',en:'Creator of Python'}, av:'', add:'2026-09' },
+  { h:'gaearon',        n:'Dan Abramov',            f:300000,  c:['oss'],         d:{zh:'React 核心贡献者，overreacted.io 博客',en:'React core contributor, overreacted.io blog'}, av:'', add:'2026-09' },
+  { h:'kentcdodds',     n:'Kent C. Dodds',          f:300000,  c:['oss'],         d:{zh:'测试与开源教学专家，Testing Library 贡献者',en:'Testing and open source education expert, Testing Library contributor'}, av:'', add:'2026-09' },
+  { h:'sindresorhus',   n:'Sindre Sorhus',          f:300000,  c:['oss'],         d:{zh:'高产 Node.js 开源库作者与维护者',en:'Prolific Node.js open source library author and maintainer'}, av:'', add:'2026-09' },
+  { h:'addyosmani',     n:'Addy Osmani',            f:300000,  c:['oss'],         d:{zh:'Chrome 团队，性能与开源工具专家',en:'Chrome team, performance and open source tools expert'}, av:'', add:'2026-09' },
+  { h:'paul_irish',     n:'Paul Irish',             f:300000,  c:['oss'],         d:{zh:'前端性能与 Chrome DevTools 贡献者',en:'Frontend performance and Chrome DevTools contributor'}, av:'', add:'2026-09' },
+  { h:'schneierblog',   n:'Bruce Schneier',         f:300000,  c:['oss'],         d:{zh:'安全与密码学专家',en:'Security and cryptography expert'}, av:'', add:'2026-09' },
+  { h:'kelseyhightower',n:'Kelsey Hightower',       f:300000,  c:['oss'],         d:{zh:'Kubernetes 与云原生开源倡导者',en:'Kubernetes and cloud-native open source advocate'}, av:'', add:'2026-09' },
+  { h:'jessfraz',       n:'Jessie Frazelle',        f:50000,   c:['oss'],         d:{zh:'容器、安全与开源基础设施',en:'Containers, security and open source infrastructure'}, av:'', add:'2026-09' },
+  { h:'brendangregg',   n:'Brendan Gregg',          f:50000,   c:['oss'],         d:{zh:'性能分析与 eBPF 专家',en:'Performance analysis and eBPF expert'}, av:'', add:'2026-09' },
+  { h:'bcantrill',      n:'Bryan Cantrill',         f:50000,   c:['oss'],         d:{zh:'Oxide Computer，系统与开源深度实践',en:'Oxide Computer, systems and open source depth'}, av:'', add:'2026-09' },
+  { h:'charitymajors',  n:'Charity Majors',         f:50000,   c:['oss'],         d:{zh:'可观测性与 SRE 开源实践（Honeycomb）',en:'Observability and SRE open source practice'}, av:'', add:'2026-09' },
+  { h:'lizrice',        n:'Liz Rice',               f:50000,   c:['oss'],         d:{zh:'eBPF 与云原生安全开源',en:'eBPF and cloud-native security open source'}, av:'', add:'2026-09' },
+  { h:'matthew_d_green',n:'Matthew Green',          f:50000,   c:['oss'],         d:{zh:'密码学工程博客作者',en:'Cryptography engineering blogger'}, av:'', add:'2026-09' },
+  { h:'jbeda',          n:'Joe Beda',               f:50000,   c:['oss'],         d:{zh:'Kubernetes 联合创始人',en:'Kubernetes co-founder'}, av:'', add:'2026-09' },
+  { h:'brendanburns',   n:'Brendan Burns',          f:50000,   c:['oss'],         d:{zh:'Kubernetes 联合创始人',en:'Kubernetes co-founder'}, av:'', add:'2026-09' },
+  { h:'surma',          n:'Surma',                  f:50000,   c:['oss'],         d:{zh:'Web 性能与 WebAssembly 开源实践',en:'Web performance and WebAssembly open source'}, av:'', add:'2026-09' },
+  { h:'jakearchibald',  n:'Jake Archibald',         f:50000,   c:['oss'],         d:{zh:'Service Worker 与 Web 性能专家',en:'Service Worker and web performance expert'}, av:'', add:'2026-09' },
+  { h:'sebmarkbage',    n:'Sebastian Markbåge',     f:50000,   c:['oss'],         d:{zh:'React 核心开发者',en:'React core developer'}, av:'', add:'2026-09' },
+  { h:'ddevault',       n:'Drew DeVault',           f:50000,   c:['oss'],         d:{zh:'Sourcehut 创始人，Sway、Hare 维护者',en:'Founder of Sourcehut, maintainer of Sway and Hare'}, av:'', add:'2026-09' },
+  { h:'nikomatsakis',   n:'Niko Matsakis',          f:50000,   c:['oss'],         d:{zh:'Rust 语言团队核心',en:'Rust language team core'}, av:'', add:'2026-09' },
+  { h:'withoutboats',   n:'boats',                  f:50000,   c:['oss'],         d:{zh:'Rust 异步与语言设计',en:'Rust async and language design'}, av:'', add:'2026-09' },
+  { h:'steveklabnik',   n:'Steve Klabnik',          f:50000,   c:['oss'],         d:{zh:'Rust 文档核心贡献者',en:'Core Rust documentation contributor'}, av:'', add:'2026-09' },
+  { h:'raphlinus',      n:'Raph Levien',            f:50000,   c:['oss'],         d:{zh:'字体、图形与开源渲染',en:'Fonts, graphics and open source rendering'}, av:'', add:'2026-09' },
+  { h:'raymondh',       n:'Raymond Hettinger',      f:50000,   c:['oss'],         d:{zh:'Python 核心开发者，深度教学',en:'Python core developer and deep educator'}, av:'', add:'2026-09' },
+  { h:'brettcannon',    n:'Brett Cannon',           f:50000,   c:['oss'],         d:{zh:'Python 核心开发者',en:'Python core developer'}, av:'', add:'2026-09' },
+  { h:'nedbat',         n:'Ned Batchelder',         f:50000,   c:['oss'],         d:{zh:'Coverage.py 作者，Python 测试开源',en:'Author of Coverage.py, Python testing open source'}, av:'', add:'2026-09' },
+  { h:'hynek',          n:'Hynek Schlawack',        f:50000,   c:['oss'],         d:{zh:'attrs 作者，Python 打包与开源实践',en:'attrs author, Python packaging and open source practice'}, av:'', add:'2026-09' },
+  { h:'jakevdp',        n:'Jake VanderPlas',        f:50000,   c:['oss'],         d:{zh:'Python 数据科学与开源可视化',en:'Python data science and open source visualization'}, av:'', add:'2026-09' },
+  { h:'timothycrosley', n:'Timothy Crosley',       f:5000,    c:['oss'],         d:{zh:'isort、hug 等 Python 开源工具作者',en:'Author of isort, hug and other Python open source tools'}, av:'', add:'2026-09' },
+  { h:'mariatta',       n:'Mariatta',               f:5000,    c:['oss'],         d:{zh:'Python 核心开发者',en:'Python core developer'}, av:'', add:'2026-09' },
+  { h:'ericmjl',        n:'Eric J. Ma',             f:5000,    c:['oss'],         d:{zh:'数据科学与开源网络分析',en:'Data science and open source network analysis'}, av:'', add:'2026-09' },
+  { h:'chendaniely',    n:'Daniel Chen',            f:5000,    c:['oss'],         d:{zh:'数据科学教学与开源',en:'Data science teaching and open source'}, av:'', add:'2026-09' },
 ];
 
 /* ===== i18n ===== */
@@ -385,13 +425,13 @@ zh:{
   desc:'X热榜是每周更新的 X（Twitter）博主粉丝数周榜：福利姬、私密摄影等 18+ 创作者与独立开发出海开发者按粉丝数排名，一键直达博主主页。免费提交收录，博主分享可带来真实流量。',
   brand:'X热榜',
   h1a:'X/Twitter 博主', h1b:'人气排行榜',
-  tagline:'每周更新 · 福利姬 / 私密摄影 / COS / 独立开发 / AI · 一键直达主页',
+  tagline:'每周更新 · 福利姬 / 私密摄影 / COS / 开发 / AI / 开源 · 一键直达主页',
   metaCount:'共收录', metaCount2:'位博主', updated:'数据更新于', est:'粉丝数为约数', weekly:'每周更新',
   weekTpl:'🏆 {y} 年第 {w} 周榜 · {range}',
   demoNotice:'⚠️ 当前榜单为示例数据（账号均带 demo 前缀），正式数据待博主收录后更新。',
-  tabAll:'🏆 总榜', tabFlj:'🔞 福利姬', tabPhoto:'📷 私密摄影', tabIndie:'💻 独立开发', tabCos:'💎 COS·二次元', tabAi:'🤖 AI',
+  tabAll:'🏆 总榜', tabFlj:'🔞 福利姬', tabPhoto:'📷 私密摄影', tabIndie:'💻 独立开发', tabCos:'💎 COS·二次元', tabAi:'🤖 AI', tabOss:'🐙 开源大神',
   searchPh:'搜索名字或 @handle…', countTpl:'{n} 位博主', empty:'没有匹配的博主，换个关键词试试',
-  followers:'粉丝', catFlj:'福利姬', catPhoto:'私密摄影', catIndie:'独立开发', catSea:'出海', catCos:'COS', catAcg:'二次元', catAi:'AI', c18:'18+',
+  followers:'粉丝', catFlj:'福利姬', catPhoto:'私密摄影', catIndie:'独立开发', catSea:'出海', catCos:'COS', catAcg:'二次元', catAi:'AI', catOss:'开源', c18:'18+',
   btnHome:'主页 ↗', btnShare:'分享',
   ctaTitle:'你是 X 博主？免费上榜', ctaBody:'提交你的账号信息，审核通过即可进入榜单。榜单会为每位博主带来真实的主页访问流量，也欢迎把你的排名分享给粉丝。',
   ctaBtn:'＋ 提交收录', shareSite:'📢 分享 X热榜',
@@ -415,13 +455,13 @@ en:{
   desc:'X Hot List is a weekly-updated ranking of popular X (Twitter) creators: curated 18+ and boudoir picks plus indie hackers going global, ranked by followers. One tap to each profile. Free submission.',
   brand:'X Hot List',
   h1a:'X/Twitter Creator ', h1b:'Rankings',
-  tagline:'Updated weekly · 18+ / Boudoir / Cosplay / Indie / AI · One tap to each profile',
+  tagline:'Updated weekly · 18+ / Boudoir / Cosplay / Dev / AI / OSS · One tap to each profile',
   metaCount:'', metaCount2:'creators listed', updated:'Updated', est:'follower counts are estimates', weekly:'updated weekly',
   weekTpl:'🏆 Week {w}, {y} Ranking · {range}',
   demoNotice:'⚠️ Demo data below (all handles prefixed with demo_). Real entries will be added after review.',
-  tabAll:'🏆 All', tabFlj:'🔞 18+ Picks', tabPhoto:'📷 Boudoir', tabIndie:'💻 Indie Dev', tabCos:'💎 Cosplay', tabAi:'🤖 AI',
+  tabAll:'🏆 All', tabFlj:'🔞 18+ Picks', tabPhoto:'📷 Boudoir', tabIndie:'💻 Indie Dev', tabCos:'💎 Cosplay', tabAi:'🤖 AI', tabOss:'🐙 Open Source',
   searchPh:'Search name or @handle…', countTpl:'{n} creators', empty:'No creators match. Try another keyword.',
-  followers:'followers', catFlj:'18+ Creator', catPhoto:'Boudoir', catIndie:'Indie Dev', catSea:'Going Global', catCos:'Cosplay', catAcg:'Anime', catAi:'AI', c18:'18+',
+  followers:'followers', catFlj:'18+ Creator', catPhoto:'Boudoir', catIndie:'Indie Dev', catSea:'Going Global', catCos:'Cosplay', catAcg:'Anime', catAi:'AI', catOss:'Open Source', c18:'18+',
   btnHome:'Profile ↗', btnShare:'Share',
   ctaTitle:'Are you a creator? Get listed free', ctaBody:'Submit your account and appear on the board after review. Your rank badge drives real profile visits — share it with your fans.',
   ctaBtn:'＋ Submit', shareSite:'📢 Share X Hot List',
@@ -517,6 +557,7 @@ function filtered(){
     if (tab === 'indie' && !(b.c.includes('indie') || b.c.includes('sea'))) return false;
     if (tab === 'cos' && !(b.c.includes('cos') || b.c.includes('acg'))) return false;
     if (tab === 'ai' && !b.c.includes('ai')) return false;
+    if (tab === 'oss' && !b.c.includes('oss')) return false;
     if (q && !(b.n.toLowerCase().includes(q) || b.h.toLowerCase().includes(q))) return false;
     return true;
   });
@@ -536,7 +577,7 @@ function renderList(){
     const av = b.av
       ? '<span class="av"><img src="' + esc(b.av) + '" alt="" loading="lazy" onerror="this.parentNode.textContent=\'' + esc(initial) + '\'"></span>'
       : '<span class="av" style="--g1:' + g1 + ';--g2:' + g2 + '">' + esc(initial) + '</span>';
-    const CATKEY = { flj:'catFlj', photo:'catPhoto', indie:'catIndie', sea:'catSea', cos:'catCos', acg:'catAcg', ai:'catAi' };
+    const CATKEY = { flj:'catFlj', photo:'catPhoto', indie:'catIndie', sea:'catSea', cos:'catCos', acg:'catAcg', ai:'catAi', oss:'catOss' };
     const chips = b.c.map(c => '<span class="chip">' + esc(t(CATKEY[c] || c)) + '</span>').join('')
       + (NSFW_TABS.some(x => b.c.includes(x)) ? ' <span class="chip">🔞 ' + t('c18') + '</span>' : '');
     return '<li class="card r' + (r <= 3 ? r : '') + '">' + bg
@@ -633,7 +674,7 @@ renderWeek();
 if (META.demo) $('demoNotice').style.display = '';
 else $('demoNotice').style.display = 'none';
 const h0 = location.hash.replace('#','');
-goTab(['all','flj','photo','indie','cos','ai'].includes(h0) ? h0 : 'all', false);
+goTab(['all','flj','photo','indie','cos','ai','oss'].includes(h0) ? h0 : 'all', false);
 </script>
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6a164def7d63477cba60148b8417ca95"}'></script>
 </body>

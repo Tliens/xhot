@@ -41,6 +41,7 @@ body:
         - label: 独立开发 / Indie dev
         - label: 出海 / Going global
         - label: AI / AI creator
+        - label: 开源 / Open source
     validations:
       required: true
   - type: textarea
