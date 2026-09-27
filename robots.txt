@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tliens.github.io/xhot/sitemap.xml
+Sitemap: https://xhot.kuige.me/sitemap.xml
