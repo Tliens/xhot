@@ -2,7 +2,7 @@
 
 X（Twitter）博主人气排行榜：按粉丝数排名，含「福利姬 / 18+ Creators」「私密摄影 / Boudoir」「独立开发 / Indie Dev」推荐分区，一键直达博主主页。博主可提交收录、分享自己的排名徽章，为主页带来真实流量。
 
-**线上地址 Live**: https://xhot.kuige.me/
+**线上地址 Live**: https://tliens.top/
 
 纯静态单文件站点（`index.html`，内联 CSS/JS，零外部依赖、零构建），中英双语（`?lang=zh` / `?lang=en`），亮暗主题，NSFW 分区需 18+ 确认（仅存本地浏览器）。
 
