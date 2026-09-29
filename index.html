@@ -9,7 +9,8 @@
 <link rel="alternate" hreflang="zh" href="https://tliens.top/?lang=zh">
 <link rel="alternate" hreflang="en" href="https://tliens.top/?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://tliens.top/">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="X热榜 · X Hot List">
 <meta property="og:title" content="X热榜 — X/Twitter 每周人气排行">
@@ -60,7 +61,8 @@ button{font-family:inherit;cursor:pointer}
 header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
 .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;letter-spacing:.3px}
-.brand .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+.brand .logo{width:28px;height:28px;border-radius:8px;overflow:hidden;flex:0 0 28px}
+.brand .logo img{width:100%;height:100%;object-fit:cover;display:block}
 .brand .sub{font-size:11px;font-weight:600;color:var(--tx2);letter-spacing:1px;margin-top:5px}
 .ctrl{display:flex;gap:8px}
 .ctrl button{background:var(--card);border:1px solid var(--line);color:var(--tx);border-radius:9px;min-width:38px;height:34px;padding:0 10px;font-size:13px;font-weight:700;transition:border-color .15s}
@@ -133,7 +135,27 @@ footer{border-top:1px solid var(--line);margin-top:34px;padding:22px 0 40px;font
 footer p{margin-bottom:6px}
 footer a{color:var(--chiptx)}
 .flinks{margin-top:10px;display:flex;gap:14px;flex-wrap:wrap}
+.firefly{position:fixed;left:14px;bottom:14px;z-index:60;display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 12px 6px 6px;box-shadow:var(--shadow);cursor:pointer;font-family:inherit;transition:transform .12s,border-color .12s}
+.firefly:hover{transform:translateY(-2px);border-color:var(--acc)}
+.firefly img{width:40px;height:40px;border-radius:10px;object-fit:cover;display:block}
+.firefly .fname{font-size:12.5px;font-weight:800;color:var(--tx);line-height:1.25;text-align:left}
+.firefly .fname small{display:block;font-weight:600;font-size:9.5px;color:var(--tx2);letter-spacing:.5px}
+.realm{position:fixed;inset:0;z-index:100;background:rgba(5,7,12,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px}
+.realm[hidden]{display:none}
+.realm .box{position:relative;max-width:400px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px 24px;text-align:center;box-shadow:var(--shadow)}
+.realm .hero-img{width:150px;height:150px;border-radius:18px;object-fit:cover;display:block;margin:0 auto 14px;border:1px solid var(--line)}
+.realm h3{font-size:21px;font-weight:800;letter-spacing:1px;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.realm .sub{font-size:11px;color:var(--tx2);letter-spacing:2px;margin:2px 0 14px}
+.realm p{font-size:13.5px;color:var(--tx);text-align:left;margin-bottom:10px}
+.realm p.lore{color:var(--tx2);font-size:13px}
+.realm .follow{display:inline-block;margin-top:8px;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;font-weight:800;font-size:14px;border-radius:11px;padding:10px 24px;border:none;transition:filter .12s}
+.realm .follow:hover{filter:brightness(1.08)}
+.realm .close{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--tx2);font-size:22px;line-height:1;cursor:pointer;padding:4px}
+.realm .close:hover{color:var(--tx)}
 @media (max-width:560px){
+  .firefly{left:10px;bottom:10px;padding:5px 10px 5px 5px}
+  .firefly img{width:34px;height:34px;border-radius:9px}
+  .firefly .fname{font-size:11.5px}
   .card{flex-wrap:wrap}
   .rk{flex:0 0 34px}
   .fl{display:none}
@@ -145,7 +167,7 @@ footer a{color:var(--chiptx)}
 <body>
 <header class="top">
   <div class="wrap">
-    <div class="brand"><span class="logo">🔥</span><span data-i18n="brand">X热榜</span><span class="sub">X HOT LIST</span></div>
+    <div class="brand" title="无尽火域 · Endless Fire Realm"><span class="logo"><img src="wukong.jpg" alt="无尽火域 — 齐天大圣"></span><span data-i18n="brand">X热榜</span><span class="sub">X HOT LIST</span></div>
     <div class="ctrl">
       <button id="btnLang" title="Language">EN</button>
       <button id="btnTheme" title="Theme">☀️</button>
@@ -217,6 +239,23 @@ footer a{color:var(--chiptx)}
     </div>
   </footer>
 </main>
+
+<button class="firefly" id="btnRealm" type="button" aria-haspopup="dialog">
+  <img src="wukong.jpg" alt="齐天大圣">
+  <span class="fname">无尽火域<small data-i18n="realmTag">ENDLESS FIRE REALM</small></span>
+</button>
+
+<div class="realm" id="realm" hidden>
+  <div class="box" role="dialog" aria-modal="true" aria-labelledby="realmTitle">
+    <button class="close" id="realmClose" type="button" aria-label="Close">×</button>
+    <img class="hero-img" src="wukong.jpg" alt="齐天大圣">
+    <h3 id="realmTitle">无尽火域</h3>
+    <div class="sub">ENDLESS FIRE REALM</div>
+    <p data-i18n="realmIntro">这里是「X热榜」的世界：每周更新的 X 博主排行榜，收录独立开发、COS·二次元、AI 与开源领域最值得关注的创作者，一键直达他们的主页。</p>
+    <p class="lore" data-i18n="realmLore">代号取自齐天大圣——他在八卦炉中炼就火眼金睛，看穿虚妄；我们以此为志，在喧嚣的信息流里甄别真才。每一位上榜的博主都是一团火，才华与流量在此燃烧不尽，故曰「无尽火域」。</p>
+    <a class="follow" href="https://x.com/kuige_me" target="_blank" rel="noopener" data-i18n="realmFollow">🔥 去 X 上关注我</a>
+  </div>
+</div>
 
 <script type="module">
 /* ===== 数据：手动维护。改这里即可，push 后约 1 分钟自动重新部署 =====
@@ -358,7 +397,11 @@ zh:{
   fDisc:'本站为独立的第三方目录，与 X Corp. / Twitter 无任何关联；博主信息整理自公开资料，排名为约数仅供参考。',
   fPrivacy:'本站无账号系统、无跟踪 Cookie；主题偏好仅存储在你本地浏览器。',
   fSubmit:'提交收录', fContact:'联系 / 下架申请',
-  copied:'已复制 ✓'
+  copied:'已复制 ✓',
+  realmTag:'ENDLESS FIRE REALM',
+  realmIntro:'这里是「X热榜」的世界：每周更新的 X 博主排行榜，收录独立开发、COS·二次元、AI 与开源领域最值得关注的创作者，一键直达他们的主页。',
+  realmLore:'代号取自齐天大圣——他在八卦炉中炼就火眼金睛，看穿虚妄；我们以此为志，在喧嚣的信息流里甄别真才。每一位上榜的博主都是一团火，才华与流量在此燃烧不尽，故曰「无尽火域」。',
+  realmFollow:'🔥 去 X 上关注我'
 },
 en:{
   title:'X Hot List — Weekly X/Twitter Creator Rankings: Indie, Cosplay, AI & Open Source',
@@ -384,7 +427,11 @@ en:{
   fDisc:'Independent third-party directory, not affiliated with X Corp. / Twitter. Info compiled from public sources; ranks are estimates.',
   fPrivacy:'No accounts, no tracking cookies. Theme preference stays in your local browser.',
   fSubmit:'Submit', fContact:'Contact / Takedown',
-  copied:'Copied ✓'
+  copied:'Copied ✓',
+  realmTag:'ENDLESS FIRE REALM',
+  realmIntro:'Welcome to the world of X Hot List: a weekly-updated ranking of X creators worth following across indie dev, cosplay, AI and open source — one tap to each profile.',
+  realmLore:'Codename "Endless Fire Realm", after the Monkey King — tempered in the furnace until his fiery golden eyes could see through all illusion. We sift the feeds the same way, surfacing creators who truly deserve the spotlight. Every creator on the board is a flame; talent and traffic burn here without end.',
+  realmFollow:'🔥 Follow me on X'
 }};
 
 /* ===== state & helpers ===== */
@@ -552,6 +599,11 @@ $('list').addEventListener('click', e => {
   if (b) shareBlogger(b.dataset.share);
 });
 $('btnShareSite').addEventListener('click', () => tweet(t('shareSiteText')));
+const realm = $('realm');
+$('btnRealm').addEventListener('click', () => { realm.hidden = false; });
+$('realmClose').addEventListener('click', () => { realm.hidden = true; });
+realm.addEventListener('click', e => { if (e.target === realm) realm.hidden = true; });
+addEventListener('keydown', e => { if (e.key === 'Escape') realm.hidden = true; });
 
 /* ===== boot ===== */
 initLang();
