@@ -264,7 +264,7 @@ footer a{color:var(--chiptx)}
  * bv: 主页封面 URL（可留空；填了会作为卡片背景，加载时渐显、悬停时遮罩渐隐）；add: 收录月份
  */
 const SITE = 'https://tliens.top/';
-const META = { updated: '2026-09-24', demo: false };
+const META = { updated: '2026-09-29', demo: false };
 const BLOGGERS = [
   { h:'levelsio',       n:'levelsio',               f:961000,  c:['indie'],       d:{zh:'Indie Hacker 教父，多产品公开构建',en:'Godfather of indie hacking, multiple products in public'}, av:'https://pbs.twimg.com/profile_images/2077111020305162240/PwddgOau.jpg', add:'2026-09' },
   { h:'rauchg',         n:'Guillermo Rauch',        f:881000,  c:['indie'],       d:{zh:'Vercel CEO，Next.js 创造者',en:'Vercel CEO, creator of Next.js'}, av:'https://pbs.twimg.com/profile_images/1783856060249595904/8TfcCN0r.jpg', add:'2026-09' },
@@ -276,7 +276,7 @@ const BLOGGERS = [
   { h:'tdinh_me',       n:'Tony Dinh',              f:202000,  c:['indie'],       d:{zh:'TypingMind 作者，离开 FAANG 独立开发',en:'TypingMind maker, quit FAANG to go indie'}, av:'https://pbs.twimg.com/profile_images/1995658612677771266/TPla_3lg.jpg', add:'2026-09' },
   { h:'dannypostma',    n:'Danny Postma',           f:184000,  c:['indie'],       d:{zh:'HeadshotPro AI 摄影产品',en:'HeadshotPro AI photography'}, av:'https://pbs.twimg.com/profile_images/1587046912490090496/kuBUqNkb.jpg', add:'2026-09' },
   { h:'yongfook',       n:'Jon Yongfook',           f:172000,  c:['indie'],       d:{zh:'Bannerbear 图像自动化',en:'Bannerbear image automation'}, av:'https://pbs.twimg.com/profile_images/691543635779649536/TbHKbCCc.jpg', add:'2026-09' },
-  { h:'tualatrix',      n:'图拉鼎',                  f:112000,  c:['indie'],       d:{zh:'杭州独立开发者，macOS/iOS 工具',en:'Hangzhou indie dev, macOS/iOS tools'}, av:'https://pbs.twimg.com/profile_images/675270246509350912/lV9-F5ey.jpg', add:'2026-09' },
+  { h:'tualatrix',      n:'图拉鼎',                  f:112000,  c:['indie','ai'],  sub:'工具', d:{zh:'杭州独立开发者，macOS/iOS 工具',en:'Hangzhou indie dev, macOS/iOS tools'}, av:'https://pbs.twimg.com/profile_images/675270246509350912/lV9-F5ey.jpg', add:'2026-09' },
   { h:'gefei55',        n:'哥飞',                    f:61000,   c:['indie','sea'], d:{zh:'中文出海 SEO 与 AI 工具站布道者',en:'Chinese SEO & AI tools overseas advocate'}, av:'https://pbs.twimg.com/profile_images/1600285780555202560/TE8ad_yJ.jpg', add:'2026-09' },
   { h:'bourneliu66',    n:'刘小排',                  f:32000,   c:['indie','sea'], d:{zh:'AI 产品创始人，公开构建',en:'AI product founder building in public'}, av:'https://pbs.twimg.com/profile_images/1955860656919625728/sCkP_hTF.png', add:'2026-09' },
   { h:'OwenYoungZh',    n:'Owen',                   f:25000,   c:['indie','sea'], d:{zh:'沉浸式翻译等工具出海',en:'Immersive Translate and tools going global'}, av:'https://pbs.twimg.com/profile_images/1315603145557385216/dQFmDtsf.jpg', add:'2026-09' },
@@ -369,6 +369,41 @@ const BLOGGERS = [
   { h:'mariatta',       n:'Mariatta',               f:5000,    c:['oss'],         d:{zh:'Python 核心开发者',en:'Python core developer'}, av:'', add:'2026-09' },
   { h:'ericmjl',        n:'Eric J. Ma',             f:5000,    c:['oss'],         d:{zh:'数据科学与开源网络分析',en:'Data science and open source network analysis'}, av:'', add:'2026-09' },
   { h:'chendaniely',    n:'Daniel Chen',            f:5000,    c:['oss'],         d:{zh:'数据科学教学与开源',en:'Data science teaching and open source'}, av:'', add:'2026-09' },
+  { h:'kaifulee', n:'Kai-Fu Lee', f:1330000, c:['ai'], sub:'资讯', d:{zh:'零一万物CEO、创新工场董事长，持续分享大模型产业与AI趋势。',en:'CEO of 01.AI; comments on AI industry, models and strategy.'}, av:'https://pbs.twimg.com/profile_images/1016438132844032001/d6QB0d6c.jpg', add:'2026-09' },
+  { h:'dotey', n:'宝玉', f:251000, c:['ai'], sub:'资讯', d:{zh:'中文AI圈高频信息源，拆解论文、Prompt与工程实践。',en:'High-frequency Chinese AI source on prompts, papers and engineering.'}, av:'https://pbs.twimg.com/profile_images/561086911561736192/6_g58vEs.jpeg', add:'2026-09' },
+  { h:'ruanyf', n:'ruanyf', f:208000, c:['ai'], sub:'资讯', d:{zh:'技术作家，持续跟踪AI对软件开发的重塑与教程。',en:'Tech writer covering how AI reshapes software development.'}, av:'https://pbs.twimg.com/profile_images/2363795309/wbi37mdkxhr2trsr4ofa.jpeg', add:'2026-09' },
+  { h:'oran_ge', n:'Orange AI', f:183000, c:['ai'], sub:'工具', d:{zh:'ListenHub创始人，关注Agent、产品实战与模型能力。',en:'Founder of ListenHub; focuses on agents and product practice.'}, av:'https://pbs.twimg.com/profile_images/1760074488073629696/ceSsuVCY.png', add:'2026-09' },
+  { h:'op7418', n:'歸藏(guizang.ai)', f:176000, c:['ai'], sub:'绘画', d:{zh:'AIGC周刊主理人，专注AI绘画、视频生成与设计工作流。',en:'AIGC Weekly editor; AI image/video generation and design workflows.'}, av:'https://pbs.twimg.com/profile_images/1636981205504786434/xDl77JIw.jpg', add:'2026-09' },
+  { h:'waylybaye', n:'Baye', f:163000, c:['ai'], sub:'工具', d:{zh:'独立开发者，实测对比各类AI编程与效率工具。',en:'Indie developer known for hands-on AI coding tool comparisons.'}, av:'https://pbs.twimg.com/profile_images/1807439424009175040/F2mBMzcN.jpg', add:'2026-09' },
+  { h:'HiTw93', n:'Tw93', f:160000, c:['ai'], sub:'工具', d:{zh:'开源作者（Pake等），高频分享开发者工具与AI应用。',en:'Open-source builder (Pake etc.); developer tools and AI apps.'}, av:'https://pbs.twimg.com/profile_images/1960753219115868169/EOxKSK4w.jpg', add:'2026-09' },
+  { h:'dingyi', n:'Ding', f:156000, c:['ai'], sub:'工具', d:{zh:'拆解AI编程工具与中转站生态，偏商业与产品观察。',en:'Breaks down AI coding tools, proxies and product economics.'}, av:'https://pbs.twimg.com/profile_images/2000755831135191040/s6Pf_wjc.jpg', add:'2026-09' },
+  { h:'vista8', n:'向阳乔木', f:127000, c:['ai'], sub:'工具', d:{zh:'产品经理视角看AI工具、工作流与Vibe Coding。',en:'PM lens on AI tools, workflows and vibe coding.'}, av:'https://pbs.twimg.com/profile_images/1960882043249942533/h4J39ERy.jpg', add:'2026-09' },
+  { h:'xiaohu', n:'小互', f:124000, c:['ai'], sub:'资讯', d:{zh:'每日分享全球科技与AI动态、工具导航和使用技巧。',en:'Daily AI/tech news, tool roundups and practical tips.'}, av:'https://pbs.twimg.com/profile_images/1765404718959095808/BX7VN1hS.jpg', add:'2026-09' },
+  { h:'bearliu', n:'Bear Liu', f:122000, c:['ai'], sub:'工具', d:{zh:'设计师，分享Vibe Coding、生成式UI与产品决策。',en:'Designer covering vibe coding, generative UI and shipping.'}, av:'https://pbs.twimg.com/profile_images/803996540696084480/Z-uk8--s.jpg', add:'2026-09' },
+  { h:'lxfater', n:'铁锤人', f:107000, c:['ai'], sub:'工具', d:{zh:'用AI创业与做产品，分享实操、流量和工具实验。',en:'Builds with AI; shares product experiments and tool practice.'}, av:'https://pbs.twimg.com/profile_images/2005527237874089984/LyyR6wom.jpg', add:'2026-09' },
+  { h:'nishuang', n:'倪爽', f:104000, c:['ai'], sub:'工具', d:{zh:'设计顾问，分享AI工具、生产力与趋势观察。',en:'Design consultant sharing AI tools and productivity.'}, av:'https://pbs.twimg.com/profile_images/1615204555/bg_green_300x300.jpg', add:'2026-09' },
+  { h:'yetone', n:'yetone', f:90000, c:['ai'], sub:'工具', d:{zh:'avante.nvim作者，关注AI Coding Agent与编辑器。',en:'Author of avante.nvim; AI coding agents and editors.'}, av:'https://pbs.twimg.com/profile_images/1458663772017491971/h1-KC--K.jpg', add:'2026-09' },
+  { h:'huangyun_122', n:'黄赟', f:85000, c:['ai'], sub:'绘画', d:{zh:'Prompt与AI创作向账号，强调审美与提示词实践。',en:'Prompt- and creation-focused account on AI art practice.'}, av:'https://pbs.twimg.com/profile_images/1183766724534882305/SIxSKinT.jpg', add:'2026-09' },
+  { h:'xicilion', n:'响马', f:71000, c:['ai'], sub:'资讯', d:{zh:'LLM实战与开发者视角，信息密度较高。',en:'LLM practice and developer-oriented AI commentary.'}, av:'https://pbs.twimg.com/profile_images/1792551913969631232/tBrYW9Vq.jpg', add:'2026-09' },
+  { h:'Gorden_Sun', n:'Gorden Sun', f:67000, c:['ai'], sub:'资讯', d:{zh:'个人维护AI资讯日报，连续多年日更前沿动态。',en:'Runs a long-running daily AI news digest.'}, av:'https://pbs.twimg.com/profile_images/1522159828231409664/GPpXyPT1.jpg', add:'2026-09' },
+  { h:'AI_Jasonyu', n:'鱼总聊AI', f:66000, c:['ai'], sub:'工具', d:{zh:'分享AI、出海、SaaS与产品实操干货。',en:'Practical posts on AI, going-global and SaaS building.'}, av:'https://pbs.twimg.com/profile_images/1877193368725581824/7_ocNC-C.jpg', add:'2026-09' },
+  { h:'AlchainHust', n:'花叔', f:64000, c:['ai'], sub:'工具', d:{zh:'AI Native编程与产品实操，开源多项高星项目。',en:'AI-native coding/products; high-star open-source work.'}, av:'https://pbs.twimg.com/profile_images/2041105413505220608/Xgv1FKSS.jpg', add:'2026-09' },
+  { h:'lijigang', n:'李继刚', f:55000, c:['ai'], sub:'工具', d:{zh:'深度Prompt探索者，偏方法论与创意应用。',en:'Deep prompt explorer; methods and creative applications.'}, av:'https://pbs.twimg.com/profile_images/599778700943446016/N-a6Jbep.jpg', add:'2026-09' },
+  { h:'berryxia', n:'Berryxia.AI', f:49000, c:['ai'], sub:'工具', d:{zh:'分享提示词、自动化与创意型AI工作流。',en:'Prompts, automation and creative AI workflows.'}, av:'https://pbs.twimg.com/profile_images/2016043556964605952/Tqi9KA2r.jpg', add:'2026-09' },
+  { h:'tuturetom', n:'Tom Huang', f:40000, c:['ai'], sub:'工具', d:{zh:'开源Agent/设计工具方向，产品与创业结合。',en:'Open-source agent/design tools; product and startup angle.'}, av:'https://pbs.twimg.com/profile_images/1033199673035522048/WI-JLSAc.jpg', add:'2026-09' },
+  { h:'hq4ai', n:'汗青 HQ', f:37000, c:['ai'], sub:'绘画', d:{zh:'AIGC艺术、AI-IP与虚拟偶像向创作。',en:'AIGC arts, AI-IP and virtual-idol creation.'}, av:'https://pbs.twimg.com/profile_images/1934920592987496448/Rdeuz225.jpg', add:'2026-09' },
+  { h:'shao__meng', n:'meng shao', f:35000, c:['ai'], sub:'资讯', d:{zh:'追踪AI前沿资料，拆解Agent架构与企业应用。',en:'Frontier AI notes; agent architecture and enterprise cases.'}, av:'https://pbs.twimg.com/profile_images/2009826888072736772/faZAxCvC.jpg', add:'2026-09' },
+  { h:'ZHO_ZHO_ZHO', n:'-Zho-', f:34000, c:['ai'], sub:'绘画', d:{zh:'AIGC艺术家，探索建筑/艺术与生成式视觉。',en:'AIGC artist exploring architecture, art and generative visuals.'}, av:'https://pbs.twimg.com/profile_images/1736718001905303553/eLVgZgbv.jpg', add:'2026-09' },
+  { h:'yupi996', n:'程序员鱼皮', f:31000, c:['ai'], sub:'工具', d:{zh:'AI+编程教育与产品化，面向开发者入门与实战。',en:'AI + coding education and productized learning.'}, av:'https://pbs.twimg.com/profile_images/2000617981035044864/5pXwSkUN.jpg', add:'2026-09' },
+  { h:'jesselaunz', n:'Jesse Lau 遁一子', f:30000, c:['ai'], sub:'资讯', d:{zh:'关注AI资讯与实际应用、Prompt实践。',en:'AI news, applied use cases and prompt experiments.'}, av:'https://pbs.twimg.com/profile_images/1608599639674224641/GW8MrGWA.jpg', add:'2026-09' },
+  { h:'idoubicc', n:'idoubi', f:29000, c:['ai'], sub:'工具', d:{zh:'Build in public，分享AI产品与独立开发实践。',en:'Build-in-public AI products and indie development.'}, av:'https://pbs.twimg.com/profile_images/2097646001851125760/QonMwHPc.jpg', add:'2026-09' },
+  { h:'goocarlos', n:'Luyu Zhang', f:28000, c:['ai'], sub:'工具', d:{zh:'Dify创始人，开发者视角看AI应用构建。',en:'Founder of Dify; builder view on AI applications.'}, av:'https://pbs.twimg.com/profile_images/1904818806780039168/nOwgrMVE.jpg', add:'2026-09' },
+  { h:'WaytoAGI', n:'WaytoAGI｜通往AGI之路', f:25000, c:['ai'], sub:'资讯', d:{zh:'中文AI知识整理与学习资源型账号。',en:'Chinese AI knowledge base and learning resources.'}, av:'https://pbs.twimg.com/profile_images/1774714687822983168/81Gqj4jj.jpg', add:'2026-09' },
+  { h:'aiwarts', n:'卡尔的AI沃茨', f:23000, c:['ai'], sub:'工具', d:{zh:'分享AI工作流、创作方式与Prompt教学。',en:'AI workflows, creative methods and prompt teaching.'}, av:'https://pbs.twimg.com/profile_images/1685356596204040192/DYVeb0ww.jpg', add:'2026-09' },
+  { h:'SamuelQZQ', n:'DN-Samuel', f:21000, c:['ai'], sub:'工具', d:{zh:'覆盖AI工具、认知与开发者新玩法。',en:'AI tools, mental models and developer experiments.'}, av:'https://pbs.twimg.com/profile_images/1633090580543676416/7nhHRLUS.jpg', add:'2026-09' },
+  { h:'ring_hyacinth', n:'Ring Hyacinth', f:21000, c:['ai'], sub:'绘画', d:{zh:'AI视觉艺术家，持续发布生成式艺术作品。',en:'AI visual artist posting generative artwork.'}, av:'https://pbs.twimg.com/profile_images/1811285605252313088/w5sCj3nH.jpg', add:'2026-09' },
+  { h:'AxtonLiu', n:'Axton', f:20000, c:['ai'], sub:'工具', d:{zh:'讲AI自动化架构与人机协作系统设计。',en:'AI automation architecture and human-AI systems.'}, av:'https://pbs.twimg.com/profile_images/1240833934142976003/TvIlPgr9.jpg', add:'2026-09' },
+  { h:'thinkingjimmy', n:'JimmyWong', f:18000, c:['ai'], sub:'工具', d:{zh:'面向普通用户的AI工具普及与产品体验。',en:'Makes AI tools accessible for everyday users.'}, av:'https://pbs.twimg.com/profile_images/1174337829851107329/NOSu6Ng8.jpg', add:'2026-09' },
 ];
 
 /* ===== i18n ===== */
@@ -398,6 +433,7 @@ zh:{
   fPrivacy:'本站无账号系统、无跟踪 Cookie；主题偏好仅存储在你本地浏览器。',
   fSubmit:'提交收录', fContact:'联系 / 下架申请',
   copied:'已复制 ✓',
+  subNews:'资讯', subTools:'工具', subArt:'绘画',
   realmTag:'ENDLESS FIRE REALM',
   realmIntro:'这里是「X热榜」的世界：每周更新的 X 博主排行榜，收录独立开发、COS·二次元、AI 与开源领域最值得关注的创作者，一键直达他们的主页。',
   realmLore:'代号取自齐天大圣——他在八卦炉中炼就火眼金睛，看穿虚妄；我们以此为志，在喧嚣的信息流里甄别真才。每一位上榜的博主都是一团火，才华与流量在此燃烧不尽，故曰「无尽火域」。',
@@ -428,6 +464,7 @@ en:{
   fPrivacy:'No accounts, no tracking cookies. Theme preference stays in your local browser.',
   fSubmit:'Submit', fContact:'Contact / Takedown',
   copied:'Copied ✓',
+  subNews:'News', subTools:'Tools', subArt:'Art',
   realmTag:'ENDLESS FIRE REALM',
   realmIntro:'Welcome to the world of X Hot List: a weekly-updated ranking of X creators worth following across indie dev, cosplay, AI and open source — one tap to each profile.',
   realmLore:'Codename "Endless Fire Realm", after the Monkey King — tempered in the furnace until his fiery golden eyes could see through all illusion. We sift the feeds the same way, surfacing creators who truly deserve the spotlight. Every creator on the board is a flame; talent and traffic burn here without end.',
@@ -529,7 +566,9 @@ function renderList(){
       ? '<span class="av"><img src="' + esc(b.av) + '" alt="" loading="lazy" onerror="this.parentNode.textContent=\'' + esc(initial) + '\'"></span>'
       : '<span class="av" style="--g1:' + g1 + ';--g2:' + g2 + '">' + esc(initial) + '</span>';
     const CATKEY = { indie:'catIndie', sea:'catSea', cos:'catCos', acg:'catAcg', ai:'catAi', oss:'catOss' };
-    const chips = b.c.map(c => '<span class="chip">' + esc(t(CATKEY[c] || c)) + '</span>').join('');
+    const SUBKEY = { '资讯':'subNews', '工具':'subTools', '绘画':'subArt' };
+    const chips = b.c.map(c => '<span class="chip">' + esc(t(CATKEY[c] || c)) + '</span>').join('')
+      + (b.sub && SUBKEY[b.sub] ? '<span class="chip">' + esc(t(SUBKEY[b.sub])) + '</span>' : '');
     return '<li class="card r' + (r <= 3 ? r : '') + '">' + bg
       + '<div class="rk">#' + r + '</div>' + av
       + '<div class="info"><div class="nm">' + esc(b.n) + chips + '</div>'
